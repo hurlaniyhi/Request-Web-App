@@ -1,0 +1,58 @@
+   <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-inner fixed-top" style="background-color: rgba(52,58,64,0.6);">
+        <form action="/landpage" method="POST">
+        <input type="hidden" name="username" value="{{name}}">
+        <button class="btn btn-outline-success my-2 my-sm-0" value="submit" ><i class="fa fa-home"></i>&nbspHome</button>
+       <input type="hidden" name="password" value="{{password}}">
+       </form>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <form class="form-inline">
+            <button class="btn btn-outline-danger my-2 my-sm-0" style="margin-left: 1100px;" onmouseout="menu1()" onmouseover="menu()" type="submit"><a href="/" id="a_tag" style="text-decoration: none; color:#DC3545"><i class="fa fa-sign-out"></i>&nbspLogOut</a></button>
+          </form>
+        </div>
+      </nav>
+    </header>
+
+
+   <br><br>
+   <div class="request_container">
+    <img class="request_image" src="./w.png">
+    <h2 class="request_h2">user experience.</h2>
+   
+    </div>
+       
+    <br>
+    <form action="/submitted" method="POST" autocomplete="off">
+    <div class="form-row">    
+    
+    <div class="request_form_container">   
+    <p class="request_p">REQUEST BOX</p>
+    <input type="hidden" name="username" value="{{name}}">
+    <input type="hidden" name="password" value="{{password}}">
+    <input class="request_input" type="text" name="task" placeholder="title">
+    <textarea class="request_input1" type="text" name="request" placeholder="Example: &#10;Hi guys, i will be needing a Banner. Basically for a mobile phone. Please use serif font for the header and sans serif for the body"></textarea><br>
+    <p class="request_p1">Date of Delivery</p>
+     <input type="date" class="request_select" id="req" name="date"><br><br><br>
+     <button value="submit" class="Request_button">Thank You!</button><br><br>
+    </div>
+
+    <div  style="color: white; float:right; margin-left: 250px">
+    <h1>Hi {{name}}</h1>
+    <p>{{note1}}<br>{{note2}}<br>{{note3}}<br>
+    {{note4}}</p>
+     </div>
+    </div>
+
+    </form>
+
+<script>
+    function menu(){
+        document.getElementById("a_tag").style.color = "white"
+    }
+
+    function menu1(){
+        document.getElementById("a_tag").style.color = "#DC3545"
+    }
+</script>

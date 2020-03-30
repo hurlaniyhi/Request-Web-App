@@ -1,0 +1,50 @@
+<header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-inner fixed-top" style="background-color: rgba(52,58,64,0.6);">
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <form class="form-inline">
+            <button class="btn btn-outline-danger my-2 my-sm-0" style="margin-left: 1195px;" onmouseout="menul1()" onmouseover="menul()" type="submit"><a href="/" id="a_tag" style="text-decoration: none; color:#DC3545"><i class="fa fa-sign-out"></i>&nbspLogOut</a></button>
+          </form>
+        </div>
+      </nav>
+</header>
+<br><br>
+<div class="landing_container">
+    <img class="landing_image" src="./w.png">
+    <h1 class="landing_h1">user experience.</h1><br><br>
+    <div style="margin-left: 600px; color: white; ">
+        <h1>Hi {{name}}</h1>
+    <p>Do you know we can help you with<br>all your creatives.<br>Why not tell us in the request box<br>
+    what you want</p>
+     </div>
+    
+    
+    </div>
+    
+    <div class="landing_form_container">
+        
+    
+    <form action="/request" method="POST">
+    <input type="hidden" name="username" value="{{name}}">
+    <input type="hidden" name="password" value="{{password}}">
+    <Button class="landing_button1" value="submit">Make a request</Button><br><br><br>
+    </form>
+    <form action="/view" method="POST">
+    <input type="hidden" name="username" value="{{name}}">
+    <input type="hidden" name="password" value="{{password}}">
+    <button class="landing_button" value="submit">See all requests</button><br><br>
+    <br><br><br>
+  
+    </div>
+    </form>
+
+    <script>
+        function menul(){
+        document.getElementById("a_tag").style.color = "white"
+        }
+
+        function menul1(){
+        document.getElementById("a_tag").style.color = "#DC3545"
+        }
+    </script>

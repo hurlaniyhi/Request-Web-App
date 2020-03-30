@@ -1,0 +1,69 @@
+ <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-inner fixed-top " style="background-color: rgba(52,58,64,0.6);">
+        <form action="/landpage" method="POST">
+        <input type="hidden" name="username" value="{{name}}">
+        <button class="btn btn-outline-success my-2 my-sm-0" value="submit" ><i class="fa fa-home"></i>&nbspHome</button>
+       <input type="hidden" name="password" value="{{password}}">
+       </form>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <form class="form-inline">
+            <button class="btn btn-outline-danger my-2 my-sm-0" style="margin-left: 1100px;" onmouseout="menu1()" onmouseover="menu()" type="submit"><a href="/" id="a_tag" style="text-decoration: none; color:#DC3545"><i class="fa fa-sign-out"></i>&nbspLogOut</a></button>
+          </form>
+        </div>
+      </nav>
+    </header>
+
+   <br>
+<div class="feed_container">
+    <br>
+    <img class="signUp_image" src="./w.png">
+    <h1 class="feed_h2">user experience.</h1>
+</div>
+<br>
+
+<div class="tablefeed_container">
+    <div class="indexfeed">
+        <br>
+    <h2 style="padding-left: 50px; color: white">All Requests</h2><br>
+    <div style="margin-left: 35px; margin-right: 35px">
+    <table class="table">
+    
+    <tbody>
+        {{#each list}}
+        
+        <tr>
+            <td><button class="feed_but1">{{this.task}}</button></td>
+            <td><button id="trigColor" class="feed_but5">{{this.status}}</button></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+</div>
+</div>
+<div class="feed_color_overlay"></div>
+</div>
+<script>
+     
+    function changeColor(e){
+        
+        if(e=="Completed"){
+            document.getElementById("trigColor").style.backgroundColor = "green"
+        }
+        else{
+            document.getElementById("trigColor").style.backgroundColor = "blue"
+        }
+    }
+    //document.getElementById("trigColor").value = changeColor(document.getElementById("trigColor").innerHTML)
+    function menu(){
+        document.getElementById("a_tag").style.color = "white"
+    }
+
+    function menu1(){
+        document.getElementById("a_tag").style.color = "#DC3545"
+    }
+
+
+</script>
+

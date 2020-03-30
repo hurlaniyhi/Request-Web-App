@@ -1,0 +1,50 @@
+.landing_container{
+    margin-top: 10px;
+    margin-left: 90px;
+    width: 900px;
+    
+}
+
+
+.landing_form_container{
+    margin-left: 120px;
+    width: 340px;
+}
+
+.landing_h1{
+    display: inline;
+    color: white;
+}
+.landing_button{
+    
+        width: 260px;
+        height: 45px;
+        margin-left: 36px;
+        background-color: #EEBF2D;
+        border-top-style: none;
+        border-bottom-style: none;
+        border-right-style: none;
+        border-left-style: none;
+        color: white;
+        font-weight: bold;
+    }
+
+    .landing_button1{
+    
+        width: 260px;
+        height: 45px;
+        margin-left: 36px;
+        background-color: #EEBF2D;
+        border-top-style: none;
+        border-bottom-style: none;
+        border-right-style: none;
+        border-left-style: none;
+        color: white;
+        font-weight: bold;
+    }
+#logout{
+    margin-left: 1210px;
+    margin-top: 10px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}

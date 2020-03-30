@@ -1,0 +1,111 @@
+<header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-inner fixed-top" style="background-color: rgba(52,58,64,0.6);">
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <form class="form-inline">
+            <button class="btn btn-outline-danger my-2 my-sm-0" style="margin-left: 1195px;" onmouseout="menu1()" onmouseover="menu()" type="submit"><a href="/" id="a_tag" style="text-decoration: none; color:#DC3545"><i class="fa fa-sign-out"></i>&nbspLogOut</a></button>
+          </form>
+        </div>
+      </nav>
+</header>
+<div class="row">
+    <div class="admin_container">
+    <img class="signUp_image" src="./w.png">
+    <h1 class="admin_h2">user experience.</h1>
+    </div>
+<div class="table_container" id="tableCont">
+    <div class="index">
+    <h3 id="title" style="padding-left: 100px; visibilty: visible">All Requests</h3>
+    <div style="margin-left: 70px; margin-right: 70px">
+    <div id="hide_it" style="display: block">
+    <table class="table">
+        
+    <thead>
+        <tr>
+            
+            <th style="text-align: center;">Name</th>
+            <th style="text-align: center;">Task</th>
+            <th style="text-align: center;">Due Date</th>
+            <th style="text-align: center;"></th>
+            <th style="text-align: center;">Status</th>
+            <th style="text-align: center;"></th>
+            
+        
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td><button class="but1">{{this.username}}</button></td>
+            <td><button class="but1" onclick="showRequest('{{this.request}}')">{{this.task}}</button></td>
+            <td><button class="but2">{{this.date}}</button></td>
+            <td><button class="but3"><a href="/adminTable/accept/{{this._id}}" style="text-decoration: none; color: white">Accept</a></button></td>
+            <td><button class="but4"><a href="/admintable/reject/{{this._id}}" style="text-decoration: none; color: white">Reject</a></button></td>
+            <td><button class="but5"><a href="/adminTable/completed/{{this._id}}" style="text-decoration: none; color: white">Completed</a></button></td>
+            
+        </tr>        
+        {{/each}}
+    </tbody>
+    
+</table>
+</div>
+<div id="req_disp" style="display:none">
+        <textarea class="requestInput1" id="myreq" type="text" name="request"></textarea><br><br>
+        <button value="submit" class="request_button" onclick="clickBut()">Close</button><br><br>
+        </div>
+</div>
+</div>
+<div class="color_overlay"></div>
+</div>
+</div>
+
+<div class="counter_container">
+    <div class="index">
+    <p style="line-height: 40px; padding-left: 110px;font-weight:bold">TOTAL TASKS: {{{total}}}</p>
+    <div class="form-row">
+        <div class="pendingTask">
+            <p style="font-weight:bold">PENDING TASKS</p>
+            <button style="width: 180px; height: 80px; font-size:50px; text-align:center; font-weight:bolder"><p>{{pending}}</p></button>
+        </div>
+        <div class="completedTask" style="float: right;">
+            <p style="font-weight:bold">COMPLETED TASKS</p>
+            <button style="width: 180px; height: 80px; font-size:50px; text-align:center; font-weight:bolder"><p>{{completed}}</p></button>
+        </div>
+
+    </div>
+    <br>
+    </div>
+    <div class="counter_overlay"></div>
+</div>
+
+<script>
+    function showRequest(e){
+        
+        document.getElementById("hide_it").style.display = "none"
+        document.getElementById("req_disp").style.display = "block"
+       
+        document.getElementById("myreq").innerHTML = e
+        document.getElementById("title").style.visibility = "hidden"
+        document.getElementById("tableCont").style.marginLeft = "35%"
+
+
+    }
+
+    function clickBut(){
+        document.getElementById("hide_it").style.display = "block"
+        document.getElementById("req_disp").style.display = "none"
+        document.getElementById("title").style.visibility = "visible"
+        document.getElementById("tableCont").style.marginLeft = "19%"
+
+        
+    }
+
+    function menu(){
+        document.getElementById("a_tag").style.color = "white"
+    }
+
+    function menu1(){
+        document.getElementById("a_tag").style.color = "#DC3545"
+    }
+</script>

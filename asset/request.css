@@ -1,0 +1,85 @@
+.request_container{
+    margin-top: 5px;
+    margin-left: 90px;
+    width: 350px;
+    
+    
+}
+
+.request_form_container{
+    margin-left: 100px;
+    background-color: white;
+    width: 420px;
+    margin-bottom: 20px;
+    
+    
+}
+.request_input{
+    width: 350px;
+    height: 40px;
+    margin-left: 36px;
+    padding-left: 5px;
+    margin-top: 0px;
+}
+.request_input1{
+    width: 350px;
+    height: 250px;
+    margin-left: 36px;
+    padding-left: 5px;
+    resize: none;
+    margin-top: 5px;
+}
+
+.request_h2{
+    display: inline;
+    color: white;
+}
+.request_p{
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    line-height: 50px;
+}
+.request_p1{
+    font-size: large;
+    font-weight: bold;
+    padding-left: 33px;
+    line-height: 35px;
+}
+.request_p2{
+    padding-left: 33px;
+}
+.request_select{
+    
+    width: 150px;
+    margin-left: 30px;
+    background-color:  #BECBD1;
+    height: 40;
+    text-align: center;
+}
+.Request_button{
+    
+        width: 120px;
+        height: 40px;
+        margin-left: 150px;
+        background-color: #14B318;
+        border-top-style: none;
+        border-bottom-style: none;
+        border-right-style: none;
+        border-left-style: none;
+        color: white;
+        border-radius: 5%;
+    }
+
+    #Home{
+        margin-left: 25px;  
+        font-weight: bold;
+        
+    }
+
+    #Reqlogout{
+        /* margin-left: 1210px; */
+        margin-right: 25px;
+        font-weight: bold;
+        float: right;
+    }
