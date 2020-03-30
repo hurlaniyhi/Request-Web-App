@@ -9,7 +9,7 @@
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <form class="form-inline">
-            <button class="btn btn-outline-danger my-2 my-sm-0" style="margin-left: 1100px;" onmouseout="menu1()" onmouseover="menu()" type="submit"><a href="/" id="a_tag" style="text-decoration: none; color:#DC3545"><i class="fa fa-sign-out"></i>&nbspLogOut</a></button>
+            <button class="btn btn-outline-danger my-2 my-sm-0" style="margin-left: 1100px;" onmouseout="feedmenu1()" onmouseover="feedmenu()"><a href="/" id="a_tag" style="text-decoration: none; color:#DC3545"><i class="fa fa-sign-out"></i>&nbspLogOut</a></button>
           </form>
         </div>
       </nav>
@@ -23,44 +23,73 @@
 </div>
 <br>
 
-<div class="tablefeed_container">
+<div class="tablefeed_container" id="tableCont">
     <div class="indexfeed">
         <br>
-    <h2 style="padding-left: 50px; color: white">All Requests</h2><br>
+    <h2 id="title" style="padding-left: 50px; color: white">All Requests</h2><br>
     <div style="margin-left: 35px; margin-right: 35px">
+    <div id="hide_it" style="display: block">
     <table class="table">
+
+        <thead>
+        <tr>
+            
+            <th style="text-align: center;">Task</th>
+            <th style="text-align: center;">Status</th>
+
+        </tr>
+        </thead>
     
     <tbody>
         {{#each list}}
         
         <tr>
-            <td><button class="feed_but1">{{this.task}}</button></td>
-            <td><button id="trigColor" class="feed_but5">{{this.status}}</button></td>
+            <td><button class="feed_but1" onclick="showRequest('{{this.request}}')">{{this.task}}</button></td>
+            <td><button id="trigColor" class="feed_but5" style="background-color: {{this.color}};">{{this.status}}</button></td>
         </tr>
         {{/each}}
     </tbody>
 </table>
 </div>
+<div id="req_disp" style="display:none;">
+        <textarea class="feedInput1" id="myreq" type="text" name="request"></textarea><br><br>
+        <button value="submit" class="request_button" onclick="clickBut()">Close</button><br><br>
+        </div>
 </div>
+</div>
+
 <div class="feed_color_overlay"></div>
+</div>
 </div>
 <script>
      
-    function changeColor(e){
+    function showRequest(e){
         
-        if(e=="Completed"){
-            document.getElementById("trigColor").style.backgroundColor = "green"
-        }
-        else{
-            document.getElementById("trigColor").style.backgroundColor = "blue"
-        }
+        document.getElementById("hide_it").style.display = "none"
+        document.getElementById("req_disp").style.display = "block"
+       
+        document.getElementById("myreq").innerHTML = e
+        document.getElementById("title").style.display = "none"
+        document.getElementById("tableCont").style.marginLeft = "27%"
+        
+
+
+    }
+
+    function clickBut(){
+        document.getElementById("hide_it").style.display = "block"
+        document.getElementById("req_disp").style.display = "none"
+        document.getElementById("title").style.display = "block"
+        document.getElementById("tableCont").style.marginLeft = "19%"
+
+        
     }
     //document.getElementById("trigColor").value = changeColor(document.getElementById("trigColor").innerHTML)
-    function menu(){
+    function feedmenu(){
         document.getElementById("a_tag").style.color = "white"
     }
 
-    function menu1(){
+    function feedmenu1(){
         document.getElementById("a_tag").style.color = "#DC3545"
     }
 

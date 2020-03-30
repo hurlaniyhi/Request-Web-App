@@ -16,7 +16,7 @@ router.get('/',(req,res)=>{
 })
 
 router.post('/view', (req,res)=>{
-    Feedback.find({username: req.body.username}).lean().exec(function(err, docs){
+    Inspector.find({username: req.body.username}).lean().exec(function(err, docs){
       
         if (!err){
             
@@ -46,12 +46,12 @@ router.get('/signup',(req,res)=>{
 })
 
 router.get('/adminTable',(req,res)=>{
-    Inspector.countDocuments({}, function(err,penNumb){
-        Feedback.countDocuments({status: "Completed"}, function(err,compNumb){
+    Inspector.countDocuments({status: "Pending"}, function(err,penNumb){
+        Inspector.countDocuments({status: "Completed"}, function(err,compNumb){
             
-            Inspector.find({}).lean().exec(function(err, docs){
+            Inspector.find({status: "Pending"}).lean().exec(function(err, docs){
                 if (!err){
-                    console.log(docs)
+                    
                     res.render('pages/adminTable',{
                         list: docs,
                         background: "FeatureProductCopy2.png",
@@ -137,143 +137,83 @@ function insertRecord(req,res){
 }
 
 
-router.get('/admintable/accept/:id', (req,res)=>{
-    Feedback.find({_id: req.params.id}).lean().exec(function(err, result){
-        if(!result){
+router.get('/admintable/completed/:id', (req,res)=>{
      
     Inspector.findOne({_id: req.params.id},function(err, doc){
-        console.log(doc)
+        
         
         if(doc){
 
-            var feedback = new Feedback();
-            feedback.username = doc.username
-            feedback.task = doc.task
-            feedback.status = "Pending"
-            console.log(feedback)
-            feedback.save((err, docs)=>{
+            Inspector.findByIdAndUpdate({_id: req.params.id}, {
+                _id: doc._id,
+                username: doc.username, 
+                task: doc.task,
+                request: doc.request,
+                date: doc.date,
+                status : "Completed",
+                color : "green"
+            }, 
+            {new: true}, (err,doc)=>{
+
             if (!err){
-            console.log("successfully posted for feedback")
+            console.log("successfully updated")
             res.redirect('/adminTable')
             }
            else{
-            console.log("error occur during insertion")
+            console.log("error occur during update")
             }
-    }) 
+        })
             
             
         }
         else{
-            console.log('cannot find document in the data base')
+            console.log('cannot find document in the database')
         }
         
 })
-    }
-  else{
-      console.log("ID already exist in the feedback database")
-      res.redirect('/adminTable')
-  }
-})
+    
+  
+
 })
 
 
 
 router.get('/admintable/reject/:id', (req,res)=>{
-    Feedback.findOne({_id: req.params.id},function(err, result){
-    if(!result){
     Inspector.findOne({_id: req.params.id},function(err, doc){
-        console.log(doc)
+        
         
         if(doc){
 
-            var feedback = new Feedback();
-            feedback.username = doc.username
-            feedback.task = doc.task
-            feedback.status = "Rejected"
-            console.log(feedback)
-            feedback.save((err, docs)=>{
+            Inspector.findByIdAndUpdate({_id: req.params.id}, {
+                _id: doc._id,
+                username: doc.username, 
+                task: doc.task,
+                request: doc.request,
+                date: doc.date,
+                status : "Rejected",
+                color : "red"
+            }, 
+            {new: true}, (err,doc)=>{
+
             if (!err){
-            console.log("successfully posted for feedback")
-            Inspector.findByIdAndRemove(req.params.id, (err,remres)=>{
-                if (!err){
-                    res.redirect("/adminTable")
-                }
-                else {
-                    console.log("Error while deleting record :" + err)
-                }
-            })
+            console.log("successfully updated")
+            res.redirect('/adminTable')
             }
            else{
-            console.log("error occur during insertion")
+            console.log("error occur during update")
             }
-    }) 
-            
-        }
-        else{
-            console.log('cannot find document in the data base')
-        }
-        
-})
-    
-   
-
-    }
-    
-
-
-    else{
-        console.log("not possible to exist in the feedback database")
-    }
-    
-    })
-})
-
-router.get('/admintable/completed/:id', (req,res)=>{
-    Feedback.findOne({_id: req.params.id},function(err, result){
-        if(!result){
-        Inspector.findOne({_id: req.params.id},function(err, doc){
-            console.log(doc)
-            
-            if(doc){
-    
-                var feedback = new Feedback();
-                feedback.username = doc.username
-                feedback.task = doc.task
-                feedback.status = "Completed"
-                console.log(feedback)
-                feedback.save((err, docs)=>{
-                if (!err){
-                console.log("successfully posted for feedback")
-                Inspector.findByIdAndRemove(req.params.id, (err,remres)=>{
-                    if (!err){
-                        res.redirect("/adminTable")
-                    }
-                    else {
-                        console.log("Error while deleting record :" + err)
-                    }
-                })
-                }
-               else{
-                console.log("error occur during insertion")
-                }
-        }) 
-                
-            }
-            else{
-                console.log('cannot find document in the data base')
-            }
-            
-    })
-        
-       
-        }
-    
-        else{
-            console.log("not possible to exist in the feedback database")
-        }
-        
         })
+            
+            
+        }
+        else{
+            console.log('cannot find document in the database')
+        }
+        
 })
+    
+})
+
 
 
 router.post("/request",(req,res)=>{
@@ -311,7 +251,9 @@ function insertRecord1(req,res){
     inspector.username = req.body.username;
     inspector.task = req.body.task;
     inspector.request = req.body.request;
-    inspector.date = req.body.date
+    inspector.date = req.body.date,
+    inspector.status = "Pending",
+    inspector.color = "yellow"
    console.log(inspector)
     inspector.save((err, doc)=>{
         if (!err){

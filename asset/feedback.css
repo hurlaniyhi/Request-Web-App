@@ -67,3 +67,13 @@
     font-weight: bold;
     float: right;
 }
+
+.feedInput1{
+    width: 350px;
+    height: 250px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 10px;
+    resize: none;
+    margin-top: 5px;
+}

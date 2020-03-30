@@ -4,7 +4,7 @@
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <form class="form-inline">
-            <button class="btn btn-outline-danger my-2 my-sm-0" style="margin-left: 1195px;" onmouseout="menu1()" onmouseover="menu()" type="submit"><a href="/" id="a_tag" style="text-decoration: none; color:#DC3545"><i class="fa fa-sign-out"></i>&nbspLogOut</a></button>
+            <button class="btn btn-outline-danger my-2 my-sm-0" style="margin-left: 1195px;" onmouseout="menu1()" onmouseover="menu()"><a href="/" id="a_tag" style="text-decoration: none; color:#DC3545"><i class="fa fa-sign-out"></i>&nbspLogOut</a></button>
           </form>
         </div>
       </nav>
@@ -24,12 +24,11 @@
     <thead>
         <tr>
             
-            <th style="text-align: center;">Name</th>
-            <th style="text-align: center;">Task</th>
-            <th style="text-align: center;">Due Date</th>
-            <th style="text-align: center;"></th>
-            <th style="text-align: center;">Status</th>
-            <th style="text-align: center;"></th>
+            <th style="text-align: center; width: 140px">Name</th>
+            <th style="text-align: center; width: 140px" >Task</th>
+            <th style="text-align: center; width: 140px">Due Date</th>
+            <th style="text-align: center; width: 245px" colspan="2">Status</th>
+            <th style="text-align: center; "></th>
             
         
         </tr>
@@ -40,7 +39,6 @@
             <td><button class="but1">{{this.username}}</button></td>
             <td><button class="but1" onclick="showRequest('{{this.request}}')">{{this.task}}</button></td>
             <td><button class="but2">{{this.date}}</button></td>
-            <td><button class="but3"><a href="/adminTable/accept/{{this._id}}" style="text-decoration: none; color: white">Accept</a></button></td>
             <td><button class="but4"><a href="/admintable/reject/{{this._id}}" style="text-decoration: none; color: white">Reject</a></button></td>
             <td><button class="but5"><a href="/adminTable/completed/{{this._id}}" style="text-decoration: none; color: white">Completed</a></button></td>
             
@@ -86,8 +84,8 @@
         document.getElementById("req_disp").style.display = "block"
        
         document.getElementById("myreq").innerHTML = e
-        document.getElementById("title").style.visibility = "hidden"
-        document.getElementById("tableCont").style.marginLeft = "35%"
+        document.getElementById("title").style.display = "none"
+        document.getElementById("tableCont").style.marginLeft = "31%"
 
 
     }
@@ -95,7 +93,7 @@
     function clickBut(){
         document.getElementById("hide_it").style.display = "block"
         document.getElementById("req_disp").style.display = "none"
-        document.getElementById("title").style.visibility = "visible"
+        document.getElementById("title").style.display = "block"
         document.getElementById("tableCont").style.marginLeft = "19%"
 
         
@@ -108,4 +106,5 @@
     function menu1(){
         document.getElementById("a_tag").style.color = "#DC3545"
     }
+    
 </script>

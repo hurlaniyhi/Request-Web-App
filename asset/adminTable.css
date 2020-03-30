@@ -21,6 +21,8 @@ h3 {
     margin-left: 19%;
     /* background-color: #CEC7C4;  */
     margin-top: 40px;
+    margin-right: 19%;
+    
     /* opacity: 0.5; */
     display: flex;
     justify-content: center;
@@ -56,16 +58,8 @@ h3 {
     border-left-style: none;
     height: 35px
 }
-.but3{
-    background-color: #7D855E; 
-    width: 80px; 
-    color: white;
-    border-top-style: none;
-    border-bottom-style: none;
-    border-right-style: none;
-    border-left-style: none;
-    height: 35px
-}
+
+
 .but4{
     background-color: #E78585;
     width: 80px; 
@@ -88,7 +82,7 @@ h3 {
 }
 .pendingTask{
     margin-left: 130px;
-    margin-right: 300px;
+    margin-right: 250px;
 }
 .completedTask{
     margin-right: 100px;
@@ -108,7 +102,7 @@ h3 {
     margin-left: 18%;
     /* background-color: #CEC7C4;  */
     margin-top: 40px;
-    margin-right: 183px;
+    margin-right: 260px;
     /* opacity: 0.5; */
     display: flex;
     /* justify-content: center; */
@@ -131,7 +125,7 @@ h3 {
     margin-right: 0px;
     padding-left: 10px;
     resize: none;
-    margin-top: 5px;
+    margin-top: 45px;
 }
 
 .request_button{

@@ -12,6 +12,12 @@ var inspectorSchema = new mongoose.Schema({
     },
     date: {
         type: String
+    },
+    status: {
+        type: String
+    },
+    color: {
+        type: String
     }
 })
 
