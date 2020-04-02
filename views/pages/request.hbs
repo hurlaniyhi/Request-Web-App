@@ -1,22 +1,16 @@
-   <header>
-      <!-- Fixed navbar -->
-      <nav class="navbar navbar-expand-md navbar-inner fixed-top" style="background-color: rgba(52,58,64,0.6);">
-        <form action="/landpage" method="POST">
-        <input type="hidden" name="username" value="{{name}}">
-        <button class="btn btn-outline-success my-2 my-sm-0" value="submit" ><i class="fa fa-home"></i>&nbspHome</button>
-       <input type="hidden" name="password" value="{{password}}">
-       </form>
-
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <form class="form-inline">
-            <button class="btn btn-outline-danger my-2 my-sm-0" style="margin-left: 1100px;" onmouseout="Reqmenu1()" onmouseover="Reqmenu()"><a href="/" id="a_tag" style="text-decoration: none; color:#DC3545"><i class="fa fa-sign-out"></i>&nbspLogOut</a></button>
-          </form>
-        </div>
-      </nav>
-    </header>
+  <div class="button_reqcont" style="background-color: rgba(52,58,64,0.6);" >
+    <form action="/landpage" method="POST">
+      <input type="hidden" name="username" value="{{name}}">
+  <button id="menu_reqbutton"  onmouseout="ReqmenuU1()" onmouseover="ReqmenuU()"><i class="fa fa-home"></i>&nbspHome</button>
+     <input type="hidden" name="password" value="{{password}}">
+  </form>
+  <form action="/home" method="POST">
+  <button id="menu1_reqbutton" value="submit" onmouseout="Reqmenu1()" onmouseover="Reqmenu()"><i class="fa fa-sign-out"></i>&nbspLogOut</button>
+  </form>
+</div>
 
 
-   <br><br>
+   <br>
    <div class="request_container">
     <img class="request_image" src="./w.png">
     <h2 class="request_h2">user experience.</h2>
@@ -38,7 +32,7 @@
      <button value="submit" class="Request_button">Thank You!</button><br><br>
     </div>
 
-    <div  style="color: white; float:right; margin-left: 250px">
+    <div id="comment" style="color: white; float:right;">
     <h1>Hi {{name}}</h1>
     <p>{{note1}}<br>{{note2}}<br>{{note3}}<br>
     {{note4}}</p>
@@ -49,10 +43,22 @@
 
 <script>
     function Reqmenu(){
-        document.getElementById("a_tag").style.color = "white"
+        document.getElementById("menu1_reqbutton").style.color = "white"
+         document.getElementById("menu1_reqbutton").style.backgroundColor = "#DC3545"
     }
 
     function Reqmenu1(){
-        document.getElementById("a_tag").style.color = "#DC3545"
+        document.getElementById("menu1_reqbutton").style.color = "#DC3545"
+        document.getElementById("menu1_reqbutton").style.backgroundColor = "rgba(52,58,64,0.3)"
+    }
+
+     function ReqmenuU(){
+        document.getElementById("menu_reqbutton").style.color = "white"
+         document.getElementById("menu_reqbutton").style.backgroundColor = "#28A745"
+    }
+
+    function ReqmenuU1(){
+        document.getElementById("menu_reqbutton").style.color = "#28A745"
+        document.getElementById("menu_reqbutton").style.backgroundColor = "rgba(52,58,64,0.3)"
     }
 </script>

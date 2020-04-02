@@ -18,20 +18,17 @@ h3 {
     font-weight: bold;
 }
 .table_container{
-    margin-left: 19%;
+    margin-left: 15%;
+    margin-right: 15%;
     /* background-color: #CEC7C4;  */
+    background-color: rgba(203,206,203,0.6);
     margin-top: 40px;
-    margin-right: 19%;
     
-    /* opacity: 0.5; */
-    display: flex;
-    justify-content: center;
-    position: relative;
     
 }
 .but1{
     background-color: #D8D8D8;
-    width: 120px;
+    width: 100%;
     border-top-style: none;
     border-bottom-style: none;
     border-right-style: none;
@@ -40,7 +37,7 @@ h3 {
 }
 .but2{
     background-color: #7D855E; 
-    width: 120px; 
+    width: 100%; 
     color: white;
     border-top-style: none;
     border-bottom-style: none;
@@ -50,7 +47,7 @@ h3 {
 }
 .but3{
     background-color: #7D855E; 
-    width: 80px; 
+    width: 100%; 
     color: white;
     border-top-style: none;
     border-bottom-style: none;
@@ -62,7 +59,7 @@ h3 {
 
 .but4{
     background-color: #E78585;
-    width: 80px; 
+    width: 100%; 
     color: white;
     border-top-style: none;
     border-bottom-style: none;
@@ -72,7 +69,7 @@ h3 {
 }
 .but5{
     background-color: #E4930D; 
-    width: 120px; 
+    width: 100%; 
     color: white;
     border-top-style: none;
     border-bottom-style: none;
@@ -81,42 +78,37 @@ h3 {
     height: 35px
 }
 .pendingTask{
-    margin-left: 130px;
-    margin-right: 250px;
+    margin-left: 15%;
+    margin-right: 40%;
 }
 .completedTask{
-    margin-right: 100px;
+    /* margin-right: 30%; */
 }
-.color_overlay{
+/* .color_overlay{
     width: 100%;
     height: 100%;
     background: #CEC7C4 ;
     position: absolute;
     opacity: 0.8;
-}
+} */
 .index{
     z-index: 1;
 }
 
 .counter_container{
-    margin-left: 18%;
+    margin-left: 15%;
+    margin-right: 15%;
     /* background-color: #CEC7C4;  */
+    background-color: rgba(203,206,203,0.6);
     margin-top: 40px;
-    margin-right: 260px;
-    /* opacity: 0.5; */
-    display: flex;
-    /* justify-content: center; */
-    position: relative;
-    margin-bottom: 20px;
-    
 }
-.counter_overlay{
+/* .counter_overlay{
     width: 100%;
     height: 100%;
     background: #CEC7C4 ;
     position: absolute;
     opacity: 0.8;
-}
+} */
 
 .requestInput1{
     width: 350px;
@@ -142,9 +134,213 @@ h3 {
     border-radius: 5%;
 }
 
+#req_disp{
+    margin-left: 35%;
+}
+
 #adlogout{
     margin-left: 1210px;
     margin-top: 10px;
     font-weight: bold;
     
 }
+
+#menu_adminbutton{
+    
+    height: 40px;
+    background-color: rgba(52,58,64,0.3);
+    border-color: #DC3545;
+    color: #DC3545;
+    border-radius: 10px;
+    float: right;
+    display: block;
+    margin-right: 40px;
+    margin-top: 8px;
+    
+}
+
+.button_admincont::after{
+    content: " ";
+    display: block;
+    height: 8px;
+    clear: right;
+  }
+
+
+  @media(max-width: 2150px){
+    .table_container{
+        margin-left: 20%;
+        margin-right: 20%;
+        /* background-color: #CEC7C4;  */
+        background-color: rgba(203,206,203,0.6);
+        margin-top: 40px;  
+    }
+
+    .counter_container{
+        margin-left: 20%;
+        margin-right: 20%;
+        /* background-color: #CEC7C4;  */
+        background-color: rgba(203,206,203,0.6);
+        margin-top: 40px;
+    }
+
+    .admin_container{
+        margin-top: 50px;
+        margin-left: 20%;
+        width: 350px;
+        
+    }
+  }
+
+  @media(max-width: 1690px){
+    .table_container{
+        margin-left: 15%;
+        margin-right: 15%;
+        
+    }
+
+    .counter_container{
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    .admin_container{
+        margin-top: 50px;
+        margin-left: 15%;
+        width: 350px;
+        
+    }
+    .pendingTask{
+        margin-left: 13%;
+        margin-right: 40%;
+    }
+  }
+
+  @media(max-width: 1300px){
+    .table_container{
+        margin-left: 10%;
+        margin-right: 10%;
+        
+    }
+
+    .counter_container{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .admin_container{
+        margin-top: 50px;
+        margin-left: 10%;
+        width: 350px;
+        
+    }
+    .pendingTask{
+        margin-left: 13%;
+        margin-right: 40%;
+    }
+  }
+
+  @media(max-width: 1190px){
+    .table_container{
+        margin-left: 5%;
+        margin-right: 5%;
+        
+    }
+
+    .counter_container{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .admin_container{
+        margin-top: 50px;
+        margin-left: 5%;
+        width: 350px;
+        
+    }
+    .pendingTask{
+        margin-left: 13%;
+        margin-right: 40%;
+    }
+  }
+
+  @media(width: 1024px) and (height: 1366px){
+    .table_container{
+        margin-top: 15%;
+        
+        
+    }
+  }
+
+  @media(max-width: 970px){
+    .pendingTask{
+        margin-left: 9%;
+        margin-right: 40%;
+    }
+  }
+
+  @media(max-width: 830px){
+    .pendingTask{
+        margin-left: 6%;
+        margin-right: 40%;
+    }
+  }
+
+  @media(max-width: 770px){
+    .pendingTask{
+        margin-left: 4%;
+        margin-right: 40%;
+    }
+  }
+
+
+  @media(max-width: 738px){
+    .table_container{
+        margin-left: 1%;
+        margin-right: 1%;
+        
+    }
+
+    .counter_container{
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+
+    .admin_container{
+        margin-top: 50px;
+        margin-left: 2%;
+        width: 350px;
+        
+    }
+    .pendingTask{
+        margin-left: 2%;
+        margin-right: 40%;
+    }
+  }
+
+  @media(max-width: 634px){
+    .pendingTask{
+        margin-left: 2%;
+        margin-right: 30%;
+    } 
+  }
+
+  @media(max-width: 546px){
+    .pendingTask{
+        margin-left: 3%;
+        margin-right: 20%;
+    } 
+  }
+
+  @media(max-width: 478px){
+    .pendingTask{
+        margin-left: 1%;
+        margin-right: 10%;
+    } 
+  }
+
+  @media(max-width: 407px){
+    #req_disp{
+        margin-left: 24%;
+    } 
+  }

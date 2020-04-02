@@ -15,6 +15,10 @@ router.get('/',(req,res)=>{
     })
 })
 
+router.post('/home',(req,res)=>{
+    res.redirect('/')
+})
+
 router.post('/view', (req,res)=>{
     Inspector.find({username: req.body.username}).lean().exec(function(err, docs){
       
@@ -246,11 +250,12 @@ router.post("/submitted", (req,res)=>{
 })
 
 function insertRecord1(req,res){
+    var requestChange = req.body.request.replace(/\r?\n/g, '&lt;br&gt;')
     console.log(req.body)
     var inspector = new Inspector();
     inspector.username = req.body.username;
     inspector.task = req.body.task;
-    inspector.request = req.body.request;
+    inspector.request = requestChange;
     inspector.date = req.body.date,
     inspector.status = "Pending",
     inspector.color = "yellow"

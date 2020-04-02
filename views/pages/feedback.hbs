@@ -1,19 +1,13 @@
- <header>
-      <!-- Fixed navbar -->
-      <nav class="navbar navbar-expand-md navbar-inner fixed-top " style="background-color: rgba(52,58,64,0.6);">
-        <form action="/landpage" method="POST">
-        <input type="hidden" name="username" value="{{name}}">
-        <button class="btn btn-outline-success my-2 my-sm-0" value="submit" ><i class="fa fa-home"></i>&nbspHome</button>
-       <input type="hidden" name="password" value="{{password}}">
-       </form>
-
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <form class="form-inline">
-            <button class="btn btn-outline-danger my-2 my-sm-0" style="margin-left: 1100px;" onmouseout="feedmenu1()" onmouseover="feedmenu()"><a href="/" id="a_tag" style="text-decoration: none; color:#DC3545"><i class="fa fa-sign-out"></i>&nbspLogOut</a></button>
-          </form>
-        </div>
-      </nav>
-    </header>
+<div class="button_feedcont" style="background-color: rgba(52,58,64,0.6);" >
+    <form action="/landpage" method="POST">
+      <input type="hidden" name="username" value="{{name}}">
+  <button id="menu_feedbutton"  onmouseout="feedmenuh1()" onmouseover="feedmenuh()"><i class="fa fa-home"></i>&nbspHome</button>
+     <input type="hidden" name="password" value="{{password}}">
+  </form>
+  <form action="/home" method="POST"> 
+  <button id="menu1_feedbutton"  onmouseout="feedmenul1()" onmouseover="feedmenul()" value="submit"><i class="fa fa-sign-out"></i>&nbspLogOut</button>
+  </form>
+</div>
 
    <br>
 <div class="feed_container">
@@ -22,14 +16,13 @@
     <h1 class="feed_h2">user experience.</h1>
 </div>
 <br>
-
+<div id="hide_it" style="display: block">
 <div class="tablefeed_container" id="tableCont">
     <div class="indexfeed">
         <br>
     <h2 id="title" style="padding-left: 50px; color: white">All Requests</h2><br>
     <div style="margin-left: 35px; margin-right: 35px">
-    <div id="hide_it" style="display: block">
-    <table class="table">
+    <table class="table" style="table-layout: fixed; width: 100%; margin:auto">
 
         <thead>
         <tr>
@@ -51,26 +44,27 @@
     </tbody>
 </table>
 </div>
-<div id="req_disp" style="display:none;">
-        <textarea class="feedInput1" id="myreq" type="text" name="request"></textarea><br><br>
-        <button value="submit" class="request_button" onclick="clickBut()">Close</button><br><br>
-        </div>
+
 </div>
 </div>
 
 <div class="feed_color_overlay"></div>
 </div>
 </div>
+<div id="req_disp" style="display:none; background-color: rgba(203,206,203,0.6);" >
+        <textarea style="margin-left: 30px; margin-right: 30px; margin-top: 20px" class="feedInput1" id="myreq" type="text" name="request"></textarea><br><br>
+        <button value="submit" class="feed_button1" onclick="clickBut()">Close</button><br><br>
+        </div>
 <script>
      
     function showRequest(e){
         
         document.getElementById("hide_it").style.display = "none"
-        document.getElementById("req_disp").style.display = "block"
-       
-        document.getElementById("myreq").innerHTML = e
+        document.getElementById("req_disp").style.display = "inline-block"
+        var reqdisp =e.replace(/&lt;br&gt;/g, '\r\n')
+        document.getElementById("myreq").innerHTML = reqdisp
         document.getElementById("title").style.display = "none"
-        document.getElementById("tableCont").style.marginLeft = "27%"
+        //document.getElementById("tableCont").style.marginLeft = "27%"
         
 
 
@@ -80,17 +74,30 @@
         document.getElementById("hide_it").style.display = "block"
         document.getElementById("req_disp").style.display = "none"
         document.getElementById("title").style.display = "block"
-        document.getElementById("tableCont").style.marginLeft = "19%"
+        //document.getElementById("tableCont").style.marginLeft = "19%"
 
         
     }
     //document.getElementById("trigColor").value = changeColor(document.getElementById("trigColor").innerHTML)
-    function feedmenu(){
-        document.getElementById("a_tag").style.color = "white"
+   
+     function feedmenul(){
+        document.getElementById("menu1_feedbutton").style.color = "white"
+         document.getElementById("menu1_feedbutton").style.backgroundColor = "#DC3545"
     }
 
-    function feedmenu1(){
-        document.getElementById("a_tag").style.color = "#DC3545"
+    function feedmenul1(){
+        document.getElementById("menu1_feedbutton").style.color = "#DC3545"
+        document.getElementById("menu1_feedbutton").style.backgroundColor = "rgba(52,58,64,0.3)"
+    }
+
+     function feedmenuh(){
+        document.getElementById("menu_feedbutton").style.color = "white"
+         document.getElementById("menu_feedbutton").style.backgroundColor = "#28A745"
+    }
+
+    function feedmenuh1(){
+        document.getElementById("menu_feedbutton").style.color = "#28A745"
+        document.getElementById("menu_feedbutton").style.backgroundColor = "rgba(52,58,64,0.3)"
     }
 
 

@@ -1,11 +1,11 @@
+#main_container{
+    margin-top: 0px;
+}
 .signIn_container{
     margin-top: 50px;
     margin-left: 820px;
     width: 350px;
     
-}
-.signIn_image{
-
 }
 
 .signIn_form_container{
@@ -30,7 +30,7 @@
     display: inline;
 }
 .signIn_p{
-    text-align: center;
+    
     padding-left: 50px;
 }
 .signIn_p1{
@@ -56,4 +56,291 @@
     }
 .signIn_p3{
     text-align: center;
+    }
+
+
+    
+    @media(max-width: 2733px) {
+       
+        .signIn_container{
+            margin-top: 50px;
+            margin-left: 67%;
+            width: 23%;
+            
+
+        }
+        .signIn_p{
+            padding-left: 17%;
+        }
+
+        .signIn_form_container{
+            margin-left: 69%;
+            background-color: #BECBD1;
+            width: 13.7%;
+            height: 63%;
+            padding-bottom: 1.6%;
+        }
+
+        .signIn_input{
+            width: 76.5%;
+            height: 40px;
+            margin-left: 10.6%;
+            padding-left: 3%;
+        }
+
+        .signIn_input1{
+            width: 76.5%;
+            height: 40px;
+            margin-left: 10.6%;
+            padding-left: 3%;
+        }
+
+        .signIn_button{
+    
+            width: 76.5%;
+            height: 40px;
+            margin-left: 10.6%;
+            background-color: #14B318;
+            border-top-style: none;
+            border-bottom-style: none;
+            border-right-style: none;
+            border-left-style: none;
+            color: white;
+        }
+    }
+
+    @media(max-width: 2280px) {
+        
+        .signIn_container{
+            margin-top: 50px;
+            margin-left: 57%;
+            width: 23%;
+            
+
+        }
+        .signIn_p{
+            padding-left: 17%;
+        }
+
+        .signIn_form_container{
+            margin-left: 59%;
+            background-color: #BECBD1;
+            width: 13.7%;
+            height: 63%;
+            padding-bottom: 1.6%;
+        }
+    }
+
+        @media(max-width: 1827px) {
+            
+            .signIn_container{
+                margin-top: 50px;
+                margin-left: 67%;
+                width: 33%;
+                
+    
+            }
+            .signIn_p{
+                padding-left: 17%;
+            }
+    
+            .signIn_form_container{
+                margin-left: 69%;
+                background-color: #BECBD1;
+                width: 13.7%;
+                height: 63%;
+                padding-bottom: 1.6%;
+            }
+        }
+
+    @media(max-width: 1433px) {
+        
+        .signIn_container{
+            margin-top: 50px;
+            margin-left: 57%;
+            width: 33%;
+            
+
+        }
+        .signIn_p{
+            padding-left: 17%;
+        }
+
+        .signIn_form_container{
+            margin-left: 59%;
+            background-color: #BECBD1;
+            width: 25%;
+            height: 63%;
+            padding-bottom: 1.6%;
+        }
+
+        .signIn_input{
+            width: 76.5%;
+            height: 40px;
+            margin-left: 10.6%;
+            padding-left: 3%;
+        }
+
+        .signIn_input1{
+            width: 76.5%;
+            height: 40px;
+            margin-left: 10.6%;
+            padding-left: 3%;
+        }
+
+        .signIn_button{
+    
+            width: 76.5%;
+            height: 40px;
+            margin-left: 10.6%;
+            background-color: #14B318;
+            border-top-style: none;
+            border-bottom-style: none;
+            border-right-style: none;
+            border-left-style: none;
+            color: white;
+        }
+    }
+
+    @media(max-width: 1058px) {
+        
+        .signIn_container{
+            margin-top: 50px;
+            margin-left: 52%;
+            width: 38%;
+            
+
+        }
+        .signIn_p{
+            padding-left: 20%;
+        }
+        .signIn_form_container{
+            margin-left: 59%;
+            background-color: #BECBD1;
+            width: 33%;
+            height: 63%;
+            padding-bottom: 1.6%;
+        }
+    }
+
+    @media(min-width: 1024px) and (min-height: 1366px){
+
+        .signIn_container{
+            margin-top: 25%;
+            margin-left: 52%;
+            width: 38%;
+            
+
+        }
+    }
+    
+    @media(max-width: 922px) {
+        
+        .signIn_container{
+            margin-top: 50px;
+            margin-left: 45%;
+            width: 48%;
+            
+
+        }
+        .signIn_p{
+            padding-left: 20%;
+        }
+        .signIn_form_container{
+            margin-left: 59%;
+            background-color: #BECBD1;
+            width: 33%;
+            height: 63%;
+            padding-bottom: 1.6%;
+        }
+    }
+
+    @media(width: 768px) and (height: 1024px){
+
+        .signIn_container{
+            margin-top: 22%;
+            margin-left: 45%;
+            width: 48%;
+            
+
+        }
+    }
+
+
+    @media(max-width: 738px) {
+        
+        .signIn_container{
+            margin-top: 50px;
+            margin-left: 40%;
+            width: 60%;
+            
+
+        }
+        .signIn_p{
+            padding-left: 20%;
+        }
+        .signIn_form_container{
+            margin-left: 59%;
+            background-color: #BECBD1;
+            width: 33%;
+            height: 63%;
+            padding-bottom: 1.6%;
+        }
+    }
+
+    @media(max-width: 590px) {
+        
+        .signIn_container{
+            margin-top: 50px;
+            margin-left: 28%;
+            width: 70%;
+            
+
+        }
+        .signIn_p{
+            padding-left: 20%;
+        }
+        .signIn_form_container{
+            margin-left: 59%;
+            background-color: #BECBD1;
+            width: 33%;
+            height: 63%;
+            padding-bottom: 1.6%;
+        }
+    }
+
+
+    @media(max-width: 498px) {
+        .signIn_container{
+            margin-top: 2%;
+            margin-left: 10%;
+            width: 85%;
+            
+
+        }
+        .signIn_p{
+            padding-left: 20%;
+        }
+    }
+
+    
+
+    @media(max-width: 430px) {
+        .signIn_container{
+            margin-top: 2%;
+            margin-left: 5%;
+            width: 90%;
+            
+
+        }
+    }
+
+    @media(max-width: 392px) {
+        .signIn_container{
+            margin-top: 2%;
+            margin-left: 2%;
+            width: 100%;
+            
+
+        }
     }

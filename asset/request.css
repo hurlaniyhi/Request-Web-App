@@ -83,3 +83,187 @@
         font-weight: bold;
         float: right;
     }
+
+    #menu_reqbutton{
+    
+        height: 40px;
+        background-color: rgba(52,58,64,0.3);
+        border-color: #28A745;
+        color: #28A745;
+        border-radius: 10px;
+        float: left;
+        display: block;
+        margin-left: 30px;
+        margin-top: 8px;
+        width: 95px;
+        
+    }
+    #menu1_reqbutton{
+    
+        height: 40px;
+        background-color: rgba(52,58,64,0.3);
+        border-color: #DC3545;
+        color: #DC3545;
+        border-radius: 10px;
+        float: right;
+        display: block;
+        margin-top: 8px;
+        margin-right: 40px;
+
+    
+    }
+
+    .button_reqcont::after{
+        content: " ";
+        display: block;
+        height: 8px;
+        clear: right;
+      }
+
+
+      @media(max-width: 2300px){
+        #menu1_button{
+            margin-right: 20%;
+        }
+        #comment{
+            margin-left: 23%;
+        }
+    }
+
+    @media(max-width: 1798px){
+        #menu1_button{
+            margin-right: 20%;
+        }
+        #comment{
+            margin-left: 17%;
+        }
+    }
+
+    @media(max-width: 1610px){
+        #menu1_button{
+            margin-right: 20%;
+        }
+        #comment{
+            margin-left: 10%;
+        }
+    }
+
+      @media(max-width: 1433px){
+          #menu1_button{
+              margin-right: 20%;
+          }
+          #comment{
+              margin-left: 6%;
+          }
+      }
+
+      @media(max-width: 1198px){
+        #comment{
+            margin-left: 5% ;
+            
+            
+        }
+    }
+
+    @media(max-width: 1066px){
+        #comment{
+            margin-left: 3%;
+            
+            
+        }
+    }
+
+    @media(width: 1024px) and (height: 1366px){
+        .request_form_container{
+            margin-top: 20%;
+            
+        }
+    }
+        
+    @media(max-width: 958px){
+        #comment{
+            margin-left: 3%;
+            
+            
+        }
+    .request_form_container{
+        margin-left: 3%;
+    }   
+        
+    }
+
+    @media(max-width: 878px){
+        #comment{
+            margin-left: 4%;
+            
+            
+        }
+        .request_form_container{
+            margin-left: 3%;
+            width: 35%
+        }   
+        .request_input{
+            width: 88.5%;
+            height: 40px;
+            margin-left: 7%;
+            padding-left: 2%;
+            margin-top: 0px;
+        }
+        .request_input1{
+            width: 88%;
+            height: 250px;
+            margin-left: 7%;
+            padding-left: 2%;
+            resize: none;
+            margin-top: 5px;
+        }
+        .Request_button{
+    
+            width: 42.5%;
+            height: 40px;
+            margin-left: 28.5%;
+            background-color: #14B318;
+            border-top-style: none;
+            border-bottom-style: none;
+            border-right-style: none;
+            border-left-style: none;
+            color: white;
+            border-radius: 5%;
+        }
+    
+            
+        }
+        @media(max-width: 802px){   
+        #comment{
+            margin-left: 4%;
+            
+        }
+        }
+
+        @media(max-width: 587px){   
+            #comment{
+                margin-left: 2%;
+                
+            }
+            }
+
+            @media(max-width: 539px){   
+                #comment{
+                    margin-left: 1%;
+                    
+                }
+                .request_form_container{
+                    margin-left: 0.5%;
+                    width: 35%
+                } 
+
+                .request_select{
+    
+                    width: 71%;
+                    margin-left: 14.3%;
+                    background-color:  #BECBD1;
+                    height: 40;
+                    text-align: center;
+                }
+                }
+    
