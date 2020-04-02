@@ -228,10 +228,7 @@ router.post("/request",(req,res)=>{
             res.render('pages/request', {
                 background: '02Slider1.png',
                 name: req.body.username,
-                note1: "Do you know we can help you with",
-                note2: "all your creatives.",
-                note3: "Why not tell us in the request box",
-                note4: "what you want",
+                disp: "none",
                 password: req.body.password
             })
             
@@ -265,7 +262,8 @@ function insertRecord1(req,res){
             res.render('pages/request', {
                 background: '02Slider1.png',
                 name: req.body.username,
-                note2: "Request has been sent",
+                comment: "Request has been sent",
+                disp: "block",
                 password: req.body.password
                 
             })

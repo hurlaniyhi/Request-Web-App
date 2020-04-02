@@ -120,150 +120,290 @@
         clear: right;
       }
 
+      .cap{
+          background-color: green;
+          width: 180px;
+          margin-left: 80px;
+          margin-bottom: 8px;
+          
+      }
 
-      @media(max-width: 2300px){
+
+      @media(max-width: 2687px){
         #menu1_button{
             margin-right: 20%;
-        }
-        #comment{
-            margin-left: 23%;
-        }
+       
     }
+    
+    .cap{
+        margin-left: 44%;
+    }
+    .request_container{
+        
+        margin-left: 20%;
+        width: 350px;
+        
+    }
+    #menu1_button{
+        margin-right: 20%;
+    }
+    .request_form_container{
+      margin-left: 35%;
+      margin-right: 35%;
+      width: 60%
+  } 
+  
+  
+  .request_input{
+      width:80%;
+      height: 40px;
+      margin-left: 10%;
+      padding-left: 5px;
+      margin-top: 0px;
+  }
+  .request_input1{
+      width: 80%;
+      height: 250px;
+      margin-left: 10%;
+      padding-left: 5px;
+      resize: none;
+      margin-top: 5px;
+  }
+  .Request_button{
+
+      width: 30%;
+      height: 40px;
+      margin-left: 35%;
+      background-color: #14B318;
+      border-top-style: none;
+      border-bottom-style: none;
+      border-right-style: none;
+      border-left-style: none;
+      color: white;
+      border-radius: 5%;
+}
 
     @media(max-width: 1798px){
         #menu1_button{
             margin-right: 20%;
-        }
-        #comment{
-            margin-left: 17%;
-        }
+       
     }
 
     @media(max-width: 1610px){
         #menu1_button{
             margin-right: 20%;
         }
-        #comment{
-            margin-left: 10%;
-        }
+
     }
 
       @media(max-width: 1433px){
           #menu1_button{
               margin-right: 20%;
           }
-          #comment{
-              margin-left: 6%;
-          }
+          /* .request_form_container{
+            margin-left: 5%;
+            
+        } 
+        .request_container{
+        
+            margin-left: 5%;
+            width: 350px;
+            
+        } 
+         */
+         
       }
 
       @media(max-width: 1198px){
-        #comment{
-            margin-left: 5% ;
-            
-            
-        }
+        #menu1_button{
+            margin-right: 20%;
+       
+    }
+    .request_form_container{
+        
+        margin-left: 30%;
+        margin-right: 30%;
+    }
+    .cap{
+        margin-left: 39%;
+    }
+    .request_container{
+        
+        margin-left: 30%;
+        width: 350px;
+        
+    }
     }
 
     @media(max-width: 1066px){
-        #comment{
-            margin-left: 3%;
-            
-            
-        }
+        #menu1_button{
+            margin-right: 20%;
+       
+    }
+    .request_form_container{
+        
+        margin-left: 25%;
+        margin-right: 30%;
+    }
+    .cap{
+        margin-left: 35%;
+    }
+    .request_container{
+        
+        margin-left: 25%;
+        width: 350px;
+        
+    }
     }
 
     @media(width: 1024px) and (height: 1366px){
         .request_form_container{
-            margin-top: 20%;
+            margin-top: 2%;
             
         }
+        .request_container{
+        
+            margin-bottom: 20%;
+            width: 350px;
+        
     }
         
-    @media(max-width: 958px){
-        #comment{
-            margin-left: 3%;
-            
-            
-        }
+    @media(max-width: 882px){
+        #menu1_button{
+            margin-right: 20%;
+       
+    }
     .request_form_container{
-        margin-left: 3%;
-    }   
+        
+        margin-left: 20%;
+        margin-right: 30%;
+    }
+    .cap{
+        margin-left: 32%;
+    }
+    .request_container{
+        
+        margin-left: 20%;
+        width: 350px;
         
     }
-
-    @media(max-width: 878px){
-        #comment{
-            margin-left: 4%;
-            
-            
-        }
-        .request_form_container{
-            margin-left: 3%;
-            width: 35%
-        }   
-        .request_input{
-            width: 88.5%;
-            height: 40px;
-            margin-left: 7%;
-            padding-left: 2%;
-            margin-top: 0px;
-        }
-        .request_input1{
-            width: 88%;
-            height: 250px;
-            margin-left: 7%;
-            padding-left: 2%;
-            resize: none;
-            margin-top: 5px;
-        }
-        .Request_button{
-    
-            width: 42.5%;
-            height: 40px;
-            margin-left: 28.5%;
-            background-color: #14B318;
-            border-top-style: none;
-            border-bottom-style: none;
-            border-right-style: none;
-            border-left-style: none;
-            color: white;
-            border-radius: 5%;
-        }
-    
-            
+    }
+      
         }
         @media(max-width: 802px){   
-        #comment{
-            margin-left: 4%;
+            #menu1_button{
+                margin-right: 20%;
+           
+        }
+        .request_form_container{
+            
+            margin-left: 13%;
+            margin-right: 30%;
+        }
+        .cap{
+            margin-left: 27%;
+        }
+        .request_container{
+            
+            margin-left: 13%;
+            width: 350px;
             
         }
         }
 
-        @media(max-width: 587px){   
-            #comment{
-                margin-left: 2%;
+        @media(max-width: 702px){   
+            #menu1_button{
+                margin-right: 20%;
+           
+        }
+        .request_form_container{
+            
+            margin-left: 8%;
+            margin-right: 15%;
+        }
+        .cap{
+            margin-left: 23%;
+        }
+        .request_container{
+            
+            margin-left: 8%;
+            width: 350px;
+            
+        }
+        }
+        
+
+        @media(max-width: 557px){   
+            .request_form_container{
+            
+                margin-left: 5%;
+                margin-right: 10%;
+            }
+            .cap{
+                margin-left: 23%;
+            }
+            .request_container{
                 
-            }
+                margin-left: 5%;
+                width: 350px;
+                
+            }  
             }
 
-            @media(max-width: 539px){   
-                #comment{
-                    margin-left: 1%;
-                    
-                }
+            @media(max-width: 547px){   
+               
                 .request_form_container{
-                    margin-left: 0.5%;
-                    width: 35%
+                    margin-left: 5%;
+                    width: 70%
                 } 
-
-                .request_select{
-    
-                    width: 71%;
-                    margin-left: 14.3%;
-                    background-color:  #BECBD1;
-                    height: 40;
-                    text-align: center;
+                .request_container{
+                
+                    margin-left: 5%;
+                    width: 350px;
+                    
+                } 
+                
+                .request_input{
+                    width:80%;
+                    height: 40px;
+                    margin-left: 10%;
+                    padding-left: 5px;
+                    margin-top: 0px;
                 }
+                .request_input1{
+                    width: 80%;
+                    height: 250px;
+                    margin-left: 10%;
+                    padding-left: 5px;
+                    resize: none;
+                    margin-top: 5px;
+                }
+                .Request_button{
+    
+                    width: 30%;
+                    height: 40px;
+                    margin-left: 35%;
+                    background-color: #14B318;
+                    border-top-style: none;
+                    border-bottom-style: none;
+                    border-right-style: none;
+                    border-left-style: none;
+                    color: white;
+                    border-radius: 5%;
+                }
+            
                 }
     
+                @media(max-width: 422px){
+                    .Request_button{
+                        width:40%;
+                        margin-left: 30%;
+                    }
+                    .cap{
+                        margin-left: 17%;
+                    }
+                    .request_form_container{
+                        margin-right: 10%;
+                       
+                    } 
+                }
