@@ -1,3 +1,13 @@
+<head>
+   <script type="text/javascript">
+      function preback(){
+          window.history.forward()
+      }
+      setTimeout(preback(), 0);
+      window.onunload = function(){null}
+   </script>
+   </head>
+
   <div class="button_reqcont" style="background-color: rgba(52,58,64,0.6);" >
     <form action="/landpage" method="POST">
       <input type="hidden" name="username" value="{{name}}">

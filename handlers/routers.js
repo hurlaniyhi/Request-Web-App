@@ -15,6 +15,8 @@ router.get('/',(req,res)=>{
     })
 })
 
+
+
 router.post('/home',(req,res)=>{
     res.redirect('/')
 })

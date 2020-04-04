@@ -1,3 +1,14 @@
+<head>
+   <script type="text/javascript">
+      function preback(){
+          window.history.forward()
+      }
+      setTimeout(preback(), 0);
+      window.onunload = function(){null}
+   </script>
+   </head>
+
+
 <div class="button_cont" style="background-color: rgba(52,58,64,0.6);" >
   <form action="/home" method="POST">
   <button id="menu_landbutton" value="submit" class="menu_landbutton" onmouseout="menul1()" onmouseover="menul()"><i class="fa fa-sign-out"></i>&nbspLogOut</button>

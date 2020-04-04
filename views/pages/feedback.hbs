@@ -1,3 +1,14 @@
+<head>
+   <script type="text/javascript">
+      function preback(){
+          window.history.forward()
+      }
+      setTimeout(preback(), 0);
+      window.onunload = function(){null}
+   </script>
+   </head>
+
+
 <div class="button_feedcont" style="background-color: rgba(52,58,64,0.6);" >
     <form action="/landpage" method="POST">
       <input type="hidden" name="username" value="{{name}}">
@@ -43,6 +54,8 @@
         {{/each}}
     </tbody>
 </table>
+<br><br>
+<p class="signIn_p3" style="color: green; padding-bottom: 20px">Click on task to see details</p>
 </div>
 
 </div>
@@ -51,7 +64,7 @@
 <div class="feed_color_overlay"></div>
 </div>
 </div>
-<div id="req_disp" style="display:none; background-color: rgba(203,206,203,0.6);" >
+<div id="req_disp" style="display:none; margin-bottom: 50px; background-color: rgba(203,206,203,0.6);" >
         <textarea style="margin-left: 30px; margin-right: 30px; margin-top: 20px" class="feedInput1" id="myreq" type="text" name="request"></textarea><br><br>
         <button value="submit" class="feed_button1" onclick="clickBut()">Close</button><br><br>
         </div>

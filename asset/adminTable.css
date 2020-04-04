@@ -98,6 +98,7 @@ h3 {
 .counter_container{
     margin-left: 15%;
     margin-right: 15%;
+    margin-bottom: 20px;
     /* background-color: #CEC7C4;  */
     background-color: rgba(203,206,203,0.6);
     margin-top: 40px;
@@ -120,11 +121,11 @@ h3 {
     margin-top: 45px;
 }
 
-.request_button{
+.request1_button{
     
     width: 120px;
     height: 40px;
-    margin-left: 118px;
+    margin-left: 140px;
     background-color: #14B318;
     border-top-style: none;
     border-bottom-style: none;
