@@ -18,6 +18,9 @@ var inspectorSchema = new mongoose.Schema({
     },
     color: {
         type: String
+    },
+    password: {
+        type: String
     }
 })
 

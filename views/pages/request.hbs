@@ -1,4 +1,4 @@
-<head>
+{{!-- <head>
    <script type="text/javascript">
       function preback(){
           window.history.forward()
@@ -6,7 +6,7 @@
       setTimeout(preback(), 0);
       window.onunload = function(){null}
    </script>
-   </head>
+   </head> --}}
 
   <div class="button_reqcont" style="background-color: rgba(52,58,64,0.6);" >
     <form action="/landpage" method="POST">
@@ -14,9 +14,9 @@
   <button id="menu_reqbutton"  onmouseout="ReqmenuU1()" onmouseover="ReqmenuU()"><i class="fa fa-home"></i>&nbspHome</button>
      <input type="hidden" name="password" value="{{password}}">
   </form>
-  <form action="/home" method="POST">
-  <button id="menu1_reqbutton" value="submit" onmouseout="Reqmenu1()" onmouseover="Reqmenu()"><i class="fa fa-sign-out"></i>&nbspLogOut</button>
-  </form>
+  
+  <button id="menu1_reqbutton" onmouseout="Reqmenu1()" onmouseover="Reqmenu()"><a href="./logout" id="a-tag" style="text-decoration: none; color:#DC3545"><i class="fa fa-sign-out"></i>&nbspLogOut</a></button>
+  
 </div>
 
 
@@ -48,12 +48,12 @@
 
 <script>
     function Reqmenu(){
-        document.getElementById("menu1_reqbutton").style.color = "white"
+        document.getElementById("a-tag").style.color = "white"
          document.getElementById("menu1_reqbutton").style.backgroundColor = "#DC3545"
     }
 
     function Reqmenu1(){
-        document.getElementById("menu1_reqbutton").style.color = "#DC3545"
+        document.getElementById("a-tag").style.color = "#DC3545"
         document.getElementById("menu1_reqbutton").style.backgroundColor = "rgba(52,58,64,0.3)"
     }
 

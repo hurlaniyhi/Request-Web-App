@@ -1,4 +1,4 @@
-<head>
+{{!-- <head>
    <script type="text/javascript">
       function preback(){
           window.history.forward()
@@ -6,13 +6,13 @@
       setTimeout(preback(), 0);
       window.onunload = function(){null}
    </script>
-   </head>
+   </head> --}}
 
 
 <div class="button_admincont" style="background-color: rgba(52,58,64,0.6);" >
-  <form action="/home" method="POST">
-  <button id="menu_adminbutton" value="submit" onmouseout="adminmenu()" onmouseover="adminmenu1()"><i class="fa fa-sign-out"></i>&nbspLogOut</button>
-  </form>
+  
+  <button id="menu_adminbutton" onmouseout="adminmenu()" onmouseover="adminmenu1()"><a href="./logout" id="a-tag" style="text-decoration: none; color:#DC3545"><i class="fa fa-sign-out"></i>&nbspLogOut</a></button>
+  
 </div>
 
 <div class="row">
@@ -114,12 +114,12 @@
     }
 
    function adminmenu1(){
-        document.getElementById("menu_adminbutton").style.color = "white"
+        document.getElementById("a-tag").style.color = "white"
         document.getElementById("menu_adminbutton").style.backgroundColor = "#DC3545"
     }
 
     function adminmenu(){
-        document.getElementById("menu_adminbutton").style.color = "#DC3545"
+        document.getElementById("a-tag").style.color = "#DC3545"
         document.getElementById("menu_adminbutton").style.backgroundColor = "rgba(52,58,64,0.3)"
     }
     
