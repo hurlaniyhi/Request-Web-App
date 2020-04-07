@@ -10,7 +10,14 @@
     <p style="color: red; text-align:center;">{{info}}</p>
     <input class="signUp_input" type="text" name="username" placeholder="Username" required><br><br>
     <input class="signUp_input1" type="password" name="password" placeholder="Password" required><br><br>
-    <input class="signUp_input2" type="text" name="unit" placeholder="Select Unit"><br><br><br>
+    <select class="signUp_input2" name="unit">
+        <option value="select" style="display: none">Select Unit</option>
+        <option value="System Development">System Development</option>
+        <option value="UI/UX">UI/UX</option>
+        <option value="Business Development">Business Development</option>
+       
+    </select><br><br><br>
+    {{!-- <input class="signUp_input2" type="text" name="unit" placeholder="Select Unit"><br><br><br> --}}
     <button class="signUp_button" value="submit">SIGN UP</button><br><br>
     <p class="signIn_p3"><a href="./">Already have an account?</a></p>
     
