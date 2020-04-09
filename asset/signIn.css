@@ -43,6 +43,22 @@
         width: 260px;
         height: 40px;
         margin-left: 36px;
+        border-radius: 5px;
+        background-color: blue;
+        border-top-style: none;
+        border-bottom-style: none;
+        border-right-style: none;
+        border-left-style: none;
+        color: white;
+    }
+
+    .signIn_button1{
+    
+        width: 260px;
+        height: 40px;
+        border-radius: 5px;
+        margin-left: 36px;
+        
         background-color: #14B318;
         border-top-style: none;
         border-bottom-style: none;
@@ -100,12 +116,28 @@
             width: 76.5%;
             height: 40px;
             margin-left: 10.6%;
+            background-color: blue;
+            border-top-style: none;
+            border-bottom-style: none;
+            border-right-style: none;
+            border-left-style: none;
+            color: white;
+        }
+
+        .signIn_button1{
+    
+            width: 50%;
+            height: 40px;
+            margin-left: 25%;
             background-color: #14B318;
             border-top-style: none;
             border-bottom-style: none;
             border-right-style: none;
             border-left-style: none;
             color: white;
+            line-height: 17px;
+            /* text-overflow: hidden;
+            white-space: nowrap; */
         }
     }
 
@@ -151,6 +183,18 @@
                 height: 63%;
                 padding-bottom: 1.6%;
             }
+            .signIn_button1{
+    
+                width: 65%;
+                height: 40px;
+                margin-left: 16%;
+                background-color: #14B318;
+                border-top-style: none;
+                border-bottom-style: none;
+                border-right-style: none;
+                border-left-style: none;
+                color: white;
+            
         }
 
     @media(max-width: 1433px) {
@@ -193,7 +237,7 @@
             width: 76.5%;
             height: 40px;
             margin-left: 10.6%;
-            background-color: #14B318;
+            background-color: blue;
             border-top-style: none;
             border-bottom-style: none;
             border-right-style: none;
@@ -286,6 +330,12 @@
             height: 63%;
             padding-bottom: 1.6%;
         }
+        .signIn_button1{
+    
+            width: 66%;
+            height: 40px;
+            margin-left: 15%;
+        }
     }
 
     @media(max-width: 590px) {
@@ -307,6 +357,13 @@
             height: 63%;
             padding-bottom: 1.6%;
         }
+
+        .signIn_button1{
+    
+            width: 74%;
+            height: 40px;
+            margin-left: 12%;
+        }
     }
 
 
@@ -320,6 +377,13 @@
         }
         .signIn_p{
             padding-left: 20%;
+        }
+
+        .signIn_button1{
+    
+            width: 78%;
+            height: 40px;
+            margin-left: 10.6%;
         }
     }
 

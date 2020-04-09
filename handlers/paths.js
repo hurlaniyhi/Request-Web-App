@@ -154,7 +154,7 @@ router.post('/landpage',(req,res)=>{
 })
 
 router.post('/signup',(req,res)=>{
-    User.findOne({username: req.body.username},function(err, doc){
+    User.findOne({$or:[{username: req.body.username},{email: req.body.email}]},function(err, doc){
         
         
         if(doc){
@@ -176,6 +176,7 @@ function insertRecord(req,res){
     var user = new User();
     user.username = req.body.username
     user.password = req.body.password
+    user.email = req.body.email
     user.unit = req.body.unit
     user.save((err, doc)=>{
         if (!err){
