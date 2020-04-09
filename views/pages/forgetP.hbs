@@ -1,0 +1,26 @@
+<div id="main_container">
+   <div class="forget_container">
+    <img class="forget_image" src="./w.png">
+    <h1 class="forget_h2">user experience.</h1>
+    </div>
+    <br>
+    <div class="forget_form_container">
+        <p style="color: red; text-align:center; padding-top: 20px" style="display: {{msg}};">{{message}}</p>
+    <form action="/forgetPassword" method="POST" autocomplete="off" style="display: {{display}}">
+        <br>
+    <input class="forget_input" type="text" name="username" placeholder="Username" required><br><br>
+    <input class="forget_input1" type="email" name="email" placeholder="Email" required><br><br><br>
+    <button class="forget_button" value="submit">Submit</button><br><br>
+    </form>
+
+    <form action="/resetPassword" method="POST" autocomplete="off" style="display: {{resetDisplay}}">
+        <br>
+    <input class="forget_input" type="hidden" name="secretCode" value="{{secretCode}}">
+    <input class="forget_input" type="hidden" name="username" value="{{username}}">
+    <input class="forget_input" type="text" name="code" placeholder="Code" required><br><br>
+    <input class="forget_input1" type="password" name="newPassword" placeholder="New Password" required><br><br><br>
+    <button class="forget_button" value="submit">Submit</button><br><br>
+    </form>
+    </div>
+    
+</div>

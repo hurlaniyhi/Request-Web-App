@@ -1,7 +1,7 @@
 require('./models/db.js');
 const express = require('express')
 const app = express()
-const myRoute = require('./handlers/paths.js')
+const myRoute = require('./handlers/routes.js')
 const path = require('path')
 const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')

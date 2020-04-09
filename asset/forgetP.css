@@ -1,64 +1,50 @@
 #main_container{
     margin-top: 0px;
 }
-.signIn_container{
+.forget_container{
     margin-top: 50px;
     margin-left: 820px;
     width: 350px;
     
 }
 
-.signIn_form_container{
+.forget_form_container{
+    margin-top: 20px;
     margin-left: 850px;
     background-color: #BECBD1;
     width: 340px;
     height: 450px;
 }
-.signIn_input{
+.forget_input{
     width: 260px;
     height: 40px;
     margin-left: 36px;
     padding-left: 10px;
 }
-.signIn_input1{
+.forget_input1{
     width: 260px;
     height: 40px;
     margin-left: 36px;
     padding-left: 10px;
 }
-.signIn_h2{
+.forget_h2{
     display: inline;
 }
-.signIn_p{
+.forget_p{
     
     padding-left: 50px;
 }
-.signIn_p1{
+.forget_p1{
     font-size: x-large;
     font-weight: bold;
     text-align: center;
 }
-.signIn_button{
+.forget_button{
     
         width: 260px;
         height: 40px;
         margin-left: 36px;
         border-radius: 5px;
-        background-color: blue;
-        border-top-style: none;
-        border-bottom-style: none;
-        border-right-style: none;
-        border-left-style: none;
-        color: white;
-    }
-
-    .signIn_button1{
-    
-        width: 260px;
-        height: 40px;
-        border-radius: 5px;
-        margin-left: 36px;
-        margin-top: 10px;
         background-color: #14B318;
         border-top-style: none;
         border-bottom-style: none;
@@ -67,30 +53,30 @@
         color: white;
     }
 
- .signIn_p2{
+    
+ .forget_p2{
      text-align: center;
     }
-.signIn_p3{
+.forget_p3{
     text-align: center;
-    padding-top: 10px;
     }
 
 
     
     @media(max-width: 2733px) {
        
-        .signIn_container{
+        .forget_container{
             margin-top: 50px;
             margin-left: 67%;
             width: 23%;
             
 
         }
-        .signIn_p{
+        .forget_p{
             padding-left: 17%;
         }
 
-        .signIn_form_container{
+        .forget_form_container{
             margin-left: 69%;
             background-color: #BECBD1;
             width: 13.7%;
@@ -98,64 +84,50 @@
             padding-bottom: 1.6%;
         }
 
-        .signIn_input{
+        .forget_input{
             width: 76.5%;
             height: 40px;
             margin-left: 10.6%;
             padding-left: 3%;
         }
 
-        .signIn_input1{
+        .forget_input1{
             width: 76.5%;
             height: 40px;
             margin-left: 10.6%;
             padding-left: 3%;
         }
 
-        .signIn_button{
+        .forget_button{
     
             width: 76.5%;
             height: 40px;
             margin-left: 10.6%;
-            background-color: blue;
-            border-top-style: none;
-            border-bottom-style: none;
-            border-right-style: none;
-            border-left-style: none;
-            color: white;
-        }
-
-        .signIn_button1{
-    
-            width: 50%;
-            height: 40px;
-            margin-left: 25%;
             background-color: #14B318;
             border-top-style: none;
             border-bottom-style: none;
             border-right-style: none;
             border-left-style: none;
             color: white;
-            line-height: 17px;
-            /* text-overflow: hidden;
-            white-space: nowrap; */
         }
+
+        
     }
 
     @media(max-width: 2280px) {
         
-        .signIn_container{
+        .forget_container{
             margin-top: 50px;
             margin-left: 57%;
             width: 23%;
             
 
         }
-        .signIn_p{
+        .forget_p{
             padding-left: 17%;
         }
 
-        .signIn_form_container{
+        .forget_form_container{
             margin-left: 59%;
             background-color: #BECBD1;
             width: 13.7%;
@@ -166,25 +138,25 @@
 
         @media(max-width: 1827px) {
             
-            .signIn_container{
+            .forget_container{
                 margin-top: 50px;
                 margin-left: 67%;
                 width: 33%;
                 
     
             }
-            .signIn_p{
+            .forget_p{
                 padding-left: 17%;
             }
     
-            .signIn_form_container{
+            .forget_form_container{
                 margin-left: 69%;
                 background-color: #BECBD1;
                 width: 13.7%;
                 height: 63%;
                 padding-bottom: 1.6%;
             }
-            .signIn_button1{
+            .forget_button1{
     
                 width: 65%;
                 height: 40px;
@@ -200,18 +172,18 @@
 
     @media(max-width: 1433px) {
         
-        .signIn_container{
+        .forget_container{
             margin-top: 50px;
             margin-left: 57%;
             width: 33%;
             
 
         }
-        .signIn_p{
+        .forget_p{
             padding-left: 17%;
         }
 
-        .signIn_form_container{
+        .forget_form_container{
             margin-left: 59%;
             background-color: #BECBD1;
             width: 25%;
@@ -219,21 +191,21 @@
             padding-bottom: 1.6%;
         }
 
-        .signIn_input{
+        .forget_input{
             width: 76.5%;
             height: 40px;
             margin-left: 10.6%;
             padding-left: 3%;
         }
 
-        .signIn_input1{
+        .forget_input1{
             width: 76.5%;
             height: 40px;
             margin-left: 10.6%;
             padding-left: 3%;
         }
 
-        .signIn_button{
+        .forget_button{
     
             width: 76.5%;
             height: 40px;
@@ -249,17 +221,17 @@
 
     @media(max-width: 1058px) {
         
-        .signIn_container{
+        .forget_container{
             margin-top: 50px;
             margin-left: 52%;
             width: 38%;
             
 
         }
-        .signIn_p{
+        .forget_p{
             padding-left: 20%;
         }
-        .signIn_form_container{
+        .forget_form_container{
             margin-left: 59%;
             background-color: #BECBD1;
             width: 33%;
@@ -270,7 +242,7 @@
 
     @media(min-width: 1024px) and (min-height: 1366px){
 
-        .signIn_container{
+        .forget_container{
             margin-top: 25%;
             margin-left: 52%;
             width: 38%;
@@ -281,17 +253,17 @@
     
     @media(max-width: 922px) {
         
-        .signIn_container{
+        .forget_container{
             margin-top: 50px;
             margin-left: 45%;
             width: 48%;
             
 
         }
-        .signIn_p{
+        .forget_p{
             padding-left: 20%;
         }
-        .signIn_form_container{
+        .forget_form_container{
             margin-left: 59%;
             background-color: #BECBD1;
             width: 33%;
@@ -302,7 +274,7 @@
 
     @media(width: 768px) and (height: 1024px){
 
-        .signIn_container{
+        .forget_container{
             margin-top: 22%;
             margin-left: 45%;
             width: 48%;
@@ -314,24 +286,24 @@
 
     @media(max-width: 738px) {
         
-        .signIn_container{
+        .forget_container{
             margin-top: 50px;
             margin-left: 40%;
             width: 60%;
             
 
         }
-        .signIn_p{
+        .forget_p{
             padding-left: 20%;
         }
-        .signIn_form_container{
+        .forget_form_container{
             margin-left: 59%;
             background-color: #BECBD1;
             width: 33%;
             height: 63%;
             padding-bottom: 1.6%;
         }
-        .signIn_button1{
+        .forget_button1{
     
             width: 66%;
             height: 40px;
@@ -341,17 +313,17 @@
 
     @media(max-width: 590px) {
         
-        .signIn_container{
+        .forget_container{
             margin-top: 50px;
             margin-left: 28%;
             width: 70%;
             
 
         }
-        .signIn_p{
+        .forget_p{
             padding-left: 20%;
         }
-        .signIn_form_container{
+        .forget_form_container{
             margin-left: 59%;
             background-color: #BECBD1;
             width: 33%;
@@ -359,7 +331,7 @@
             padding-bottom: 1.6%;
         }
 
-        .signIn_button1{
+        .forget_button1{
     
             width: 74%;
             height: 40px;
@@ -369,18 +341,18 @@
 
 
     @media(max-width: 498px) {
-        .signIn_container{
+        .forget_container{
             margin-top: 2%;
             margin-left: 10%;
             width: 85%;
             
 
         }
-        .signIn_p{
+        .forget_p{
             padding-left: 20%;
         }
 
-        .signIn_button1{
+        .forget_button1{
     
             width: 78%;
             height: 40px;
@@ -391,7 +363,7 @@
     
 
     @media(max-width: 430px) {
-        .signIn_container{
+        .forget_container{
             margin-top: 2%;
             margin-left: 5%;
             width: 90%;
@@ -401,7 +373,7 @@
     }
 
     @media(max-width: 392px) {
-        .signIn_container{
+        .forget_container{
             margin-top: 2%;
             margin-left: 2%;
             width: 100%;
