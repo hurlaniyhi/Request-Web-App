@@ -182,6 +182,12 @@
         width: 350px;
         
   }
+  .feed_but1{
+      font-size: 14px;
+  }
+  .feed_but5{
+      font-size: 14px;
+  }
 }
 
 
@@ -203,6 +209,12 @@
 @media(max-width: 491px){
     #req_disp{
         margin-left: 5%;
+    }
+    .feed_but1{
+        font-size: 11px;
+    }
+    .feed_but5{
+        font-size: 11px;
     }
     }
 
