@@ -33,7 +33,11 @@ h3 {
     border-bottom-style: none;
     border-right-style: none;
     border-left-style: none;
-    height: 35px
+    height: 35px;
+    text-align: center;
+    line-height: 15px;
+    
+    
 }
 .but2{
     background-color: #7D855E; 
@@ -323,7 +327,22 @@ h3 {
     .pendingTask{
         margin-left: 2%;
         margin-right: 30%;
+    }
+    .but1{
+        font-size: 13px;
+    }
+    .but2{
+        font-size: 11px;
+    }
+    .but3{
+        font-size: 13px;
+    }
+    .but4{
+        font-size: 13px;
     } 
+    .but5{
+        font-size: 13px;
+    }
   }
 
   @media(max-width: 546px){
@@ -338,10 +357,26 @@ h3 {
         margin-left: 1%;
         margin-right: 10%;
     } 
+    .but1{
+        font-size: 10px;
+    }
+    .but2{
+        font-size: 10px;
+    }
+    .but3{
+        font-size: 10px;
+    }
+    .but4{
+        font-size: 10px;
+    } 
+    .but5{
+        font-size: 10px;
+    }
   }
 
   @media(max-width: 407px){
     #req_disp{
         margin-left: 24%;
-    } 
+    }
+    
   }

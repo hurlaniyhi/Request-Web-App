@@ -1,16 +1,21 @@
 const express = require('express')
 const mongoose = require('mongoose')
-var logged = require('./middleware.js')
+const nodemailer = require('nodemailer')
+
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+//var logged = require('./middleware.js')
+//const fs = require('fs')
+//const path = require('path');
 
 
 mongoose.set('useFindAndModify', false);
 const User = mongoose.model('User')
 const Inspector = mongoose.model('Inspector')
-const Feedback = mongoose.model('Feedback')
+const router = express.Router()
+
 
 var logged = function(req,res,next){
-    //console.log(req.session.user)
-   // req.session.user = req.body.username
+
     if(req.session.user){
         
         res.set({
@@ -26,8 +31,6 @@ var logged = function(req,res,next){
  }
 
 
-const router = express.Router()
-
 
 router.get('/', (req,res)=>{
     
@@ -36,6 +39,7 @@ router.get('/', (req,res)=>{
     })
     
 })
+
 
 router.get('/forget', (req,res)=>{
     
@@ -51,14 +55,55 @@ router.post('/forgetPassword', (req,res)=>{
     User.findOne({username: req.body.username, email: req.body.email},function(err, doc){
         
         if(doc){
+    var generate = Math.floor(Math.random() * 10000) + 1000;        
             
-            
+    let transporter = nodemailer.createTransport({
+     
+    //   host: 'smtp.gmail.com',
+    //   port: 587,
+    //   secure: false, 
+     
+     service: 'gmail',
+      auth: {
+        user: 'olaniyi.jibola152@gmail.com',
+        pass: 'ridwan526'
+      },
+//       tls:{
+//     rejectUnauthorized: false
+// },
+    });
+  
+    
+    let mailOptions = {
+      from: 'fintech.request@gmail.com', 
+      to: req.body.email, 
+      subject: 'forget password-Request App', 
+      text: `Your code to access password reset is ${String(generate)}.`
+    
+    };
+  
+
+    transporter.sendMail(mailOptions, (error,info)=>{
+        
+      if(error){
+          return console.log(error)
+      } 
+
+      console.log("Message sent: %s", info.messageId);
+    
+    //console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+    
+    })
+    
+            console.log(generate)
             res.render('pages/forgetP', {
                 background: 'elena-koycheva-bGeupv246bM-unsplash.jpg',
                 display: 'none',
                 resetDisplay: 'block',
+                msgColor: "green",
+                message: "Code has been sent to your mail",
                 username: req.body.username,
-                secretCode: "1234"
+                secretCode: generate
             })
         }
         else{
@@ -66,6 +111,7 @@ router.post('/forgetPassword', (req,res)=>{
             res.render('pages/forgetP', {
                 background: 'elena-koycheva-bGeupv246bM-unsplash.jpg',
                 msg: 'block',
+                msgColor: "red",
                 message: "Username or Email did not match",
                 display: 'block',
                 resetDisplay: 'none' 
@@ -76,16 +122,9 @@ router.post('/forgetPassword', (req,res)=>{
 })
 
 
-router.post('/resetPassword', (req,res)=>{
-    if(!req.session.user){
-    res.set({
-        "Cache-Control": "no-store",
-        "Pragma": "no-cache",
-        "Expires": 0
-    })
-    
-}
 
+router.post('/resetPassword', (req,res)=>{
+    
     if(req.body.code == req.body.secretCode){
     User.findOne({username: req.body.username},function(err, doc){
         console.log(doc)
@@ -123,6 +162,7 @@ else{
     res.render('pages/forgetP', {
         background: 'elena-koycheva-bGeupv246bM-unsplash.jpg',
         msg: 'block',
+        msgColor: "red",
         message: "Code did not match",
         display: 'none',
         resetDisplay: 'block' 
@@ -460,6 +500,7 @@ router.post("/delete",logged, (req,res)=>{
         }
     })
 })
+
 
 
 
