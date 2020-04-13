@@ -45,7 +45,7 @@
         {{#each list}}
         <tr>
             <td><button class="but1">{{this.username}}</button></td>
-            <td><button class="but1" id="pass" value="{{{this.request}}}" onclick="showRequest('{{this.request}}')">{{this.task}}</button></td>
+            <td><button class="but1" id="pass" value="{{{this.request}}}" onclick="showRequest('{{this.request}}','{{this.filename}}')">{{this.task}}</button></td>
             <td><button class="but2">{{this.date}}</button></td>
             <td><button class="but4"><a href="/admintable/reject/{{this._id}}" style="text-decoration: none; color: white">Reject</a></button></td>
             <td><button class="but5"><a href="/adminTable/completed/{{this._id}}" style="text-decoration: none; color: white">Completed</a></button></td>
@@ -67,8 +67,8 @@
 </div>
 <div id="req_disp" style="display:none; background-color: rgba(203,206,203,0.6);" >
     
-        <textarea class="requestInput1" style="margin-left: 30px; margin-right: 30px; margin-top: 20px" id="myreq" type="text" name="request"></textarea><br><br>
-    
+        <textarea class="requestInput1" style="margin-left: 30px; margin-right: 30px; margin-top: 20px" id="myreq" type="text" name="request"></textarea><br>
+        <button id="add_button3"><a href="" id="a_file" style="color: white; text-decoration: none">Attached &nbsp<i class="fa fa-download"></i></a></button><br><br>
         <button value="submit" class="request1_button" onclick="clickBut()">Close</button><br><br>
         </div>
 
@@ -92,12 +92,13 @@
 </div>
 
 <script>
-    function showRequest(e){
+    function showRequest(e,f){
         
         document.getElementById("hide_it").style.display = "none"
         document.getElementById("req_disp").style.display = "inline-block"
        var reqdisp =e.replace(/&lt;br&gt;/g, '\r\n')
         document.getElementById("myreq").innerHTML = reqdisp
+        document.getElementById("a_file").href = "./file/"+f
         document.getElementById("title").style.display = "none"
        // document.getElementById("req_disp").style.marginLeft = "35%"
 

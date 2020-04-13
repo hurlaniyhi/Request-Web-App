@@ -13,6 +13,9 @@ var inspectorSchema = new mongoose.Schema({
     date: {
         type: String
     },
+    filename: {
+        type: String
+    },
     status: {
         type: String
     },

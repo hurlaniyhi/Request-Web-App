@@ -1,7 +1,10 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const nodemailer = require('nodemailer')
-
+const crypto = require("crypto")
+const multer = require('multer')
+const path = require("path")
+const GridFsStorage = require("multer-gridfs-storage")
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 //var logged = require('./middleware.js')
 //const fs = require('fs')
@@ -12,6 +15,61 @@ mongoose.set('useFindAndModify', false);
 const User = mongoose.model('User')
 const Inspector = mongoose.model('Inspector')
 const router = express.Router()
+
+let minisave = []
+
+const mongoURI = "mongodb+srv://ridwan:ridwan526@ridwanlock-uqlxu.mongodb.net/test?retryWrites=true&w=majority";
+// mongodb+srv://ridwan:ridwan526@ridwanlock-uqlxu.mongodb.net/test?retryWrites=true&w=majority
+// connection
+// mongodb://localhost:27017/node-file-upl
+const conn = mongoose.createConnection(mongoURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+
+
+
+let gfs;
+conn.once("open", () => {
+  // init stream
+  gfs = new mongoose.mongo.GridFSBucket(conn.db, {
+    bucketName: "uploads"
+  });
+});
+
+
+
+const storage = new GridFsStorage({
+    url: mongoURI,
+    file: (req, file) => {
+        console.log(file)
+      return new Promise((resolve, reject) => {
+        crypto.randomBytes(16, (err, buf) => {
+          if (err) {
+            return reject(err);
+          }
+          const filename = buf.toString("hex") + path.extname(file.originalname);
+
+          minisave.push(filename)
+          
+          const fileInfo = {
+            filename: filename,
+            bucketName: "uploads"
+
+          };
+          resolve(fileInfo);
+
+
+        });
+      });
+    }
+  });
+  
+  const upload = multer({
+    storage
+  });
+
+
 
 
 var logged = function(req,res,next){
@@ -410,7 +468,7 @@ router.get('/admintable/reject/:id', logged, (req,res)=>{
 
 
 
-router.post("/request", logged, (req,res)=>{
+router.post("/request", logged,(req,res)=>{
 
     
     User.findOne({username: req.body.username},function(err, doc){
@@ -435,7 +493,7 @@ router.post("/request", logged, (req,res)=>{
 
 
 
-router.post("/submitted", logged,(req,res)=>{
+router.post("/submitted", logged, upload.single("file"),(req,res)=>{
     
     insertRecord1(req,res)
     
@@ -443,12 +501,13 @@ router.post("/submitted", logged,(req,res)=>{
 
 function insertRecord1(req,res){
     var requestChange = req.body.request.replace(/\r?\n/g, '&lt;br&gt;')
-    console.log(req.body)
+    console.log(minisave[minisave.length-1])
     var inspector = new Inspector();
     inspector.username = req.body.username;
     inspector.task = req.body.task;
     inspector.request = requestChange;
     inspector.date = req.body.date,
+    inspector.filename = minisave[minisave.length-1]
     inspector.status = "Pending",
     inspector.color = "yellow",
     inspector.password = req.body.password
@@ -473,7 +532,7 @@ function insertRecord1(req,res){
 
 
 router.post("/delete",logged, (req,res)=>{
-    console.log(req.body)
+    
     Inspector.findByIdAndRemove(req.body.id, (err,doc)=>{
         if (!err){
             Inspector.find({username: req.body.username}).lean().exec(function(err, docs){
@@ -501,6 +560,24 @@ router.post("/delete",logged, (req,res)=>{
     })
 })
 
+router.get("/file/:filename", (req, res) => {
+    // console.log('id', req.params.id)
+    const file = gfs
+      .find({
+        filename: req.params.filename
+      })
+      .toArray((err, files) => {
+        if (!files || files.length === 0) {
+          return res.status(404).json({
+            err: "no files exist"
+          });
+        }
+        else{
+            console.log("found")
+        gfs.openDownloadStreamByName(req.params.filename).pipe(res);
+        }
+      });
+  });
 
 
 
