@@ -93,7 +93,12 @@
 
 <script>
     function showRequest(e,f){
-        
+        if(f==""){
+            document.getElementById("add_button3").style.display = "none"
+        }
+        else{
+           document.getElementById("add_button3").style.display = "block" 
+        }
         document.getElementById("hide_it").style.display = "none"
         document.getElementById("req_disp").style.display = "inline-block"
        var reqdisp =e.replace(/&lt;br&gt;/g, '\r\n')

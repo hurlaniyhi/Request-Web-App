@@ -20,7 +20,16 @@
     height: 40px;
     margin-left: 36px;
     padding-left: 10px;
+   
 }
+/* input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearnce: none;
+
+}
+input[type=number]{
+    -moz-appearance: textfield;
+} */
 .forget_input1{
     width: 260px;
     height: 40px;
