@@ -54,12 +54,28 @@ input[type=number]{
         height: 40px;
         margin-left: 36px;
         border-radius: 5px;
-        background-color: #14B318;
+        background-color: blue;
+        display: inline-block;
         border-top-style: none;
         border-bottom-style: none;
         border-right-style: none;
         border-left-style: none;
         color: white;
+    }
+
+    .forget_button2{
+    
+        width: 260px;
+        height: 40px;
+        /* margin-left: 36px; */
+        border-radius: 5px;
+        background-color:whitesmoke;
+        border-top-style: none;
+        border-bottom-style: none;
+        border-right-style: none;
+        border-left-style: none;
+        color: white;
+        display: inline-block;
     }
 
     
@@ -109,18 +125,19 @@ input[type=number]{
 
         .forget_button{
     
-            width: 76.5%;
+            width: 35.25%;
             height: 40px;
-            margin-left: 10.6%;
-            background-color: #14B318;
-            border-top-style: none;
-            border-bottom-style: none;
-            border-right-style: none;
-            border-left-style: none;
-            color: white;
+            margin-left: 6%;
+            display: inline-block
         }
 
-        
+        .forget_button2{
+    
+            width: 35.25%;
+            height: 40px;
+            margin-left: 10.6%;
+            
+        }
     }
 
     @media(max-width: 2280px) {
@@ -165,17 +182,6 @@ input[type=number]{
                 height: 63%;
                 padding-bottom: 1.6%;
             }
-            .forget_button1{
-    
-                width: 65%;
-                height: 40px;
-                margin-left: 16%;
-                background-color: #14B318;
-                border-top-style: none;
-                border-bottom-style: none;
-                border-right-style: none;
-                border-left-style: none;
-                color: white;
             
         }
 
@@ -214,7 +220,7 @@ input[type=number]{
             padding-left: 3%;
         }
 
-        .forget_button{
+        /* .forget_button{
     
             width: 76.5%;
             height: 40px;
@@ -225,7 +231,7 @@ input[type=number]{
             border-right-style: none;
             border-left-style: none;
             color: white;
-        }
+        } */
     }
 
     @media(max-width: 1058px) {
@@ -312,12 +318,12 @@ input[type=number]{
             height: 63%;
             padding-bottom: 1.6%;
         }
-        .forget_button1{
+        /* .forget_button1{
     
             width: 66%;
             height: 40px;
             margin-left: 15%;
-        }
+        } */
     }
 
     @media(max-width: 590px) {
@@ -348,6 +354,14 @@ input[type=number]{
         }
     }
 
+    @media(max-width: 530px){
+        .forget_button{
+            font-size: 13px;
+        }
+        .forget_button2{
+            font-size: 13px;
+        }
+    }
 
     @media(max-width: 498px) {
         .forget_container{
@@ -378,6 +392,12 @@ input[type=number]{
             width: 90%;
             
 
+        }
+        .forget_button{
+            font-size: 12px;
+        }
+        .forget_button2{
+            font-size: 12px;
         }
     }
 

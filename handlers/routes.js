@@ -4,6 +4,7 @@ const nodemailer = require('nodemailer')
 const crypto = require("crypto")
 const multer = require('multer')
 const path = require("path")
+const jwt = require('jsonwebtoken')
 const GridFsStorage = require("multer-gridfs-storage")
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 //var logged = require('./middleware.js')
@@ -87,8 +88,22 @@ var logged = function(req,res,next){
         res.redirect('/')
     }
  }
+const saveToken=[]
+// const token = jwt.sign(user,"secret")
+// res.header("auth-token", token).send("token")
 
+function auth(req,res,next){
+    const token = res.header("auth-token")
+    console.log(res.header("auth-token"))
+    if(token == null){
+        return res.redirect('/')
+    }
+    else{
+        //const verified = jwt.verify(token,"secret")
 
+        next()
+    }
+}
 
 router.get('/', (req,res)=>{
     
@@ -110,7 +125,7 @@ router.get('/forget', (req,res)=>{
 })
 
 router.post('/forgetPassword', (req,res)=>{
-    User.findOne({username: req.body.username, email: req.body.email},function(err, doc){
+    User.findOne({email: req.body.email},function(err, doc){
         
         if(doc){
     var generate = Math.floor(Math.random() * 10000) + 1000;        
@@ -160,12 +175,12 @@ router.post('/forgetPassword', (req,res)=>{
                 resetDisplay: 'block',
                 msgColor: "green",
                 message: "Code has been sent to your mail",
-                username: req.body.username,
+                email: req.body.email,
                 secretCode: generate
             })
         }
         else{
-            console.log("Username and Email did not match")
+            console.log("Email did not match")
             res.render('pages/forgetP', {
                 background: 'elena-koycheva-bGeupv246bM-unsplash.jpg',
                 msg: 'block',
@@ -184,7 +199,7 @@ router.post('/forgetPassword', (req,res)=>{
 router.post('/resetPassword', (req,res)=>{
     
     if(req.body.code == req.body.secretCode){
-    User.findOne({username: req.body.username},function(err, doc){
+    User.findOne({email: req.body.email},function(err, doc){
         console.log(doc)
         if(doc){
             User.findByIdAndUpdate({_id: doc._id}, {
@@ -232,19 +247,22 @@ else{
 
 router.get('/logout',logged,(req,res)=>{
     
-    req.session.destroy(function(err){
-        if(err){
-            return next(err)
-        }
-        else{
+    // req.session.destroy(function(err){
+    //     if(err){
+    //         return next(err)
+    //     }
+    //     else{
             
-            res.redirect('/')
-        }
-    })
+    //         res.redirect('/')
+    //     }
+    // })
+
+    res.header("auth-token", null)
+    res.redirect("/")
    
 })
 
-router.post('/view', logged,(req,res)=>{
+router.post('/view', auth,(req,res)=>{
     
     Inspector.find({username: req.body.username}).lean().exec(function(err, docs){
       
@@ -277,7 +295,7 @@ router.get('/signup', (req,res)=>{
     
 })
 
-router.get('/adminTable',logged,(req,res)=>{
+router.get('/adminTable',auth,(req,res)=>{
     
     Inspector.countDocuments({status: "Pending"}, function(err,penNumb){
         Inspector.countDocuments({status: "Completed"}, function(err,compNumb){
@@ -305,19 +323,26 @@ router.get('/adminTable',logged,(req,res)=>{
 
 router.post('/landpage',(req,res)=>{
     
-    const {session} = req
-    session.user = req.body.username
-    session.save()
+    // const {session} = req
+    // session.user = req.body.username
+    // session.save()
     
-    res.set({
-        "Cache-Control": "no-store",
-        "Pragma": "no-cache",
-        "Expires": 0
-    })
+    // res.set({
+    //     "Cache-Control": "no-store",
+    //     "Pragma": "no-cache",
+    //     "Expires": 0
+    // })
 
     User.findOne({username: req.body.username, password: req.body.password},function(err, doc){
-        
+            
         if(doc){
+            var user = {
+                name: req.body.username
+            }
+            const token = jwt.sign(user,"secret")
+            res.header("auth-token", token)
+            console.log(token)
+    
             
             if(req.body.password == "ui123"){
                 
@@ -468,7 +493,7 @@ router.get('/admintable/reject/:id', logged, (req,res)=>{
 
 
 
-router.post("/request", logged,(req,res)=>{
+router.post("/request", auth,(req,res)=>{
 
     
     User.findOne({username: req.body.username},function(err, doc){
@@ -493,7 +518,7 @@ router.post("/request", logged,(req,res)=>{
 
 
 
-router.post("/submitted", logged, upload.single("file"),(req,res)=>{
+router.post("/submitted", auth, upload.single("file"),(req,res)=>{
     
     insertRecord1(req,res)
     
@@ -531,7 +556,7 @@ function insertRecord1(req,res){
 }
 
 
-router.post("/delete",logged, (req,res)=>{
+router.post("/delete",auth, (req,res)=>{
     
     Inspector.findByIdAndRemove(req.body.id, (err,doc)=>{
         if (!err){
