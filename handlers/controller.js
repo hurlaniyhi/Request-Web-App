@@ -19,7 +19,7 @@ const router = express.Router()
 
 let minisave = []
 
-const mongoURI = "mongodb://localhost:27017/node-file-upl";
+const mongoURI = "mongodb+srv://ridwan:ridwan526@ridwanlock-uqlxu.mongodb.net/test?retryWrites=true&w=majority";
 // mongodb+srv://ridwan:ridwan526@ridwanlock-uqlxu.mongodb.net/test?retryWrites=true&w=majority
 // connection
 // mongodb://localhost:27017/node-file-upl
@@ -27,7 +27,6 @@ const conn = mongoose.createConnection(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
-
 
 
 let gfs;
@@ -249,29 +248,23 @@ else{
 
 router.get('/logout',(req,res)=>{
     
-    // console.log(req.session.user)
+    console.log(req.session.user)
 
-    // req.session.destroy(function(err){
+    req.session.destroy(function(err){
         
-    //     if(err){
-    //         console.log("error")
-    //     }
-    //     else{
-    //         res.header({
-    //             "Cache-Control": "no-cache, no-store, private, must-revalidate",
-    //         })
-    //         res.redirect('/')
-    //     }
-    // })
-    res.header({
-                    "Cache-Control": "no-cache, no-store, private, must-revalidate",
-                })
-                res.redirect('/')
+        if(err){
+            console.log("error")
+        }
+        else{
+            
+            res.redirect('/')
+        }
+    })
 })
 
 
 
-router.post('/view',(req,res)=>{
+router.post('/view',logged,(req,res)=>{
     
     Inspector.find({username: req.body.username}).lean().exec(function(err, docs){
       
@@ -304,7 +297,7 @@ router.get('/signup', (req,res)=>{
     
 })
 
-router.get('/adminTable',(req,res)=>{
+router.get('/adminTable',logged,(req,res)=>{
     //res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate')
     
     Inspector.countDocuments({status: "Pending"}, function(err,penNumb){
@@ -337,11 +330,11 @@ router.post('/landpage',(req,res)=>{
     session.user = req.body.username
     session.save()
     
-    // res.set({
-    //     "Cache-Control": "no-store",
-    //     "Pragma": "no-cache",
-    //     "Expires": 0
-    // })
+    res.set({
+        "Cache-Control": "no-store",
+        "Pragma": "no-cache",
+        "Expires": 0
+    })
 
     User.findOne({username: req.body.username, password: req.body.password},function(err, doc){
             
@@ -416,7 +409,7 @@ function insertRecord(req,res){
 }
 
 
-router.get('/admintable/completed/:id', (req,res)=>{
+router.get('/admintable/completed/:id',logged, (req,res)=>{
      
     Inspector.findOne({_id: req.params.id},function(err, doc){
         
@@ -455,7 +448,7 @@ router.get('/admintable/completed/:id', (req,res)=>{
 
 
 
-router.get('/admintable/reject/:id', (req,res)=>{
+router.get('/admintable/reject/:id', logged, (req,res)=>{
     
     Inspector.findOne({_id: req.params.id},function(err, doc){
         
@@ -495,7 +488,7 @@ router.get('/admintable/reject/:id', (req,res)=>{
 
 
 
-router.post("/request",(req,res)=>{
+router.post("/request",logged,(req,res)=>{
 
     
     User.findOne({username: req.body.username},function(err, doc){
@@ -520,7 +513,7 @@ router.post("/request",(req,res)=>{
 
 
 
-router.post("/submitted", upload.single("file"),(req,res)=>{
+router.post("/submitted", logged, upload.single("file"),(req,res)=>{
     
     insertRecord1(req,res)
     
@@ -558,7 +551,7 @@ function insertRecord1(req,res){
 }
 
 
-router.post("/delete", (req,res)=>{
+router.post("/delete", logged, (req,res)=>{
     
     Inspector.findByIdAndRemove(req.body.id, (err,doc)=>{
         if (!err){
