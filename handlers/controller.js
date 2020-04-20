@@ -11,7 +11,6 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 //const fs = require('fs')
 //const path = require('path');
 
-
 mongoose.set('useFindAndModify', false);
 const User = mongoose.model('User')
 const Inspector = mongoose.model('Inspector')
@@ -335,7 +334,9 @@ router.post('/landpage',(req,res)=>{
         "Pragma": "no-cache",
         "Expires": 0
     })
-
+    if(req.body.username[req.body.username.length-1] == " "){
+        req.body.username = req.body.username.replace(req.body.username[req.body.username.length-1],"")
+    }
     User.findOne({username: req.body.username, password: req.body.password},function(err, doc){
             
         if(doc){
@@ -373,6 +374,14 @@ router.post('/landpage',(req,res)=>{
 })
 
 router.post('/signup',(req,res)=>{
+    if(req.body.username.includes(" ")){
+        res.render('pages/signUp', {
+            background: 'elena-koycheva-bGeupv246bM-unsplash.jpg',
+            info: "Username should not have space",
+            
+        })
+    }
+    else{
     User.findOne({$or:[{username: req.body.username},{email: req.body.email}]},function(err, doc){
         
         
@@ -389,6 +398,7 @@ router.post('/signup',(req,res)=>{
         }
         
 })
+    }
 })
 
 function insertRecord(req,res){
