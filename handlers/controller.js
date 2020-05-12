@@ -18,7 +18,7 @@ const router = express.Router()
 
 let minisave = []
 
-const mongoURI = "mongodb+srv://ridwan:ridwan526@ridwanlock-uqlxu.mongodb.net/test?retryWrites=true&w=majority";
+const mongoURI = "mongodb://localhost:27017/node-file-upl";
 // mongodb+srv://ridwan:ridwan526@ridwanlock-uqlxu.mongodb.net/test?retryWrites=true&w=majority
 // connection
 // mongodb://localhost:27017/node-file-upl
@@ -78,7 +78,7 @@ var logged = function(req,res,next){
         res.header({
             "Cache-Control": "no-cache, no-store, private, must-revalidate",
             "Pragma": "no-cache",
-            "Expires": 0
+            "Expires": "-1"
         })
         
         next()       
