@@ -139,7 +139,7 @@ router.post('/forgetPassword', (req,res)=>{
      service: 'gmail',
       auth: {
         user: 'olaniyi.jibola152@gmail.com',
-        pass: 'ridwan526'
+        pass: 'Ridko5267$'
       },
 //       tls:{
 //     rejectUnauthorized: false
