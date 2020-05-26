@@ -18,7 +18,7 @@ const router = express.Router()
 
 let minisave = []
 
-const mongoURI = "mongodb://localhost:27017/node-file-upl";
+const mongoURI = "mongodb+srv://ridwan:ridwan526@ridwanlock-uqlxu.mongodb.net/test?retryWrites=true&w=majority";
 // mongodb+srv://ridwan:ridwan526@ridwanlock-uqlxu.mongodb.net/test?retryWrites=true&w=majority
 // connection
 // mongodb://localhost:27017/node-file-upl
