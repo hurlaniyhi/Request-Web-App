@@ -138,8 +138,10 @@ router.post('/forgetPassword', (req,res)=>{
      
      service: 'gmail',
       auth: {
-        user: 'olaniyi.jibola152@gmail.com',
-        pass: 'Ridko5267$'
+        // user: 'olaniyi.jibola152@gmail.com',
+        // pass: 'Ridko5267$'
+         user: 'gtfintech@gmail.com',
+         pass: 'rncvncbwdrixbscw'
       },
 //       tls:{
 //     rejectUnauthorized: false
@@ -148,7 +150,7 @@ router.post('/forgetPassword', (req,res)=>{
   
     
     let mailOptions = {
-      from: 'fintech.request@gmail.com', 
+      from: '"Request App" <fintech.request@gmail.com>', 
       to: req.body.email, 
       subject: 'forget password-Request App', 
       text: `Your code to access password reset is ${String(generate)}.`
